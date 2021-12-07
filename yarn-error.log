@@ -1,0 +1,62 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\20180509\bin;C:\Program Files\Java\jdk-16.0.1\bin;C:\Program Files\Java\jdk-16.0.1\jre\bin;C:\Program Files\nodejs;C:\windows\system32;D:\phpstudy_pro\Extensions\MySQL5.7.26\bin;D:\apache-maven-3.6.1\bin;C:\Users\20180509\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\20180509\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  13.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\20180509\AppData\Local\Yarn\Cache\v6\npm-lru-cache-6.0.0-6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94-integrity\node_modules\lru-cache\README.md' -> 'C:\Users\20180509\Desktop\qianduan\vue-big-screen-plugin\node_modules\@typescript-eslint\eslint-plugin\node_modules\lru-cache\README.md'
+
+npm manifest: 
+  {
+    "name": "vue-big-screen-plugin",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build",
+      "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+      "@jiaminghi/data-view": "^2.10.0",
+      "core-js": "^3.6.5",
+      "echarts": "^5.1.1",
+      "vue": "^3.0.0",
+      "vue-class-component": "^8.0.0-0",
+      "vue-router": "^4.0.0-0",
+      "vuex": "^4.0.0-0"
+    },
+    "devDependencies": {
+      "@typescript-eslint/eslint-plugin": "^4.18.0",
+      "@typescript-eslint/parser": "^4.18.0",
+      "@vue/babel-plugin-jsx": "^1.0.6",
+      "@vue/cli-plugin-babel": "~4.5.0",
+      "@vue/cli-plugin-eslint": "~4.5.0",
+      "@vue/cli-plugin-router": "~4.5.0",
+      "@vue/cli-plugin-typescript": "~4.5.0",
+      "@vue/cli-plugin-vuex": "~4.5.0",
+      "@vue/cli-service": "~4.5.0",
+      "@vue/compiler-sfc": "^3.0.0",
+      "@vue/eslint-config-typescript": "^7.0.0",
+      "eslint": "^6.7.2",
+      "eslint-plugin-vue": "^7.0.0",
+      "sass": "^1.26.5",
+      "sass-loader": "^8.0.2",
+      "typescript": "~4.1.5"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
