@@ -1,5 +1,5 @@
 {
-  "name": "vue-big-screen-plugin",
+  "name": "tsx-big-data",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
     "@jiaminghi/data-view": "^2.10.0",
     "core-js": "^3.6.5",
     "echarts": "^5.1.1",
+    "svg-sprite-loader": "^6.0.11",
+    "swiper": "^7.3.1",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",

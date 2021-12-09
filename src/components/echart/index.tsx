@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-07 10:00:56
+ * @LastEditTime: 2021-12-07 16:28:42
  */
 import { defineComponent, onMounted, ref, watch, onBeforeUnmount } from 'vue'
 import '@/assets/echart/map/fujian.js'
@@ -63,21 +63,18 @@ export default defineComponent({
       chart.value = echarts.init(chartRef.value, 'myTheme')
       initChart()
     })
+
     onBeforeUnmount(() => {
       chart.value.dispose()
       chart.value = null
     })
 
     // 监听改变
-    watch(
-      () => props.options,
-      val => {
-        val && initChart(val)
-      },
-      {
-        deep: true
-      }
-    )
+    watch(() => props.options, val => {
+      val && initChart(val)
+    }, {
+      deep: true
+    })
 
     // 对外暴露接口
     expose({

@@ -11,26 +11,23 @@ $colors: (
   "dark": #222222,
   "black-1": #171823,
   "black": #000000,
+  "dark-green":#64e5ce,
+  "orange":#ff623e,
+  "yellow":#f9c801
+  
 );
 
 // 字体大小
 $base-font-size: 16px;
 $font-sizes: (
-  xxs: 0.1,
-  //8px
-    xs: 0.125,
-  //10px
-    sm: 0.2875,
-  //12px
-    md: 0.1625,
-  //13px
-    lg: 0.175,
-  //14px
-    xl: 0.2,
-  //16px
-    xxl: 0.225,
-  //18px
-    xxxl: 0.25 //20px,,,,
+  xxs: 2,//8px
+  xs: 1.333,//12px
+  sm: 1,//16px
+  md: 0.8,//20px
+  lg: 0.666,//24px
+  xl: 0.571428,//28px
+  xxl: 0.5,//32px
+  xxxl: 0.444//36px
 );
 
 // 宽高

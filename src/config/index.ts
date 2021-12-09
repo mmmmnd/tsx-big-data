@@ -5,11 +5,11 @@
  * @version: 1.0.0
  * @Date: 2021-12-01 16:27:59
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-07 10:05:53
+ * @LastEditTime: 2021-12-09 16:11:44
  */
-// 星期
-export const WEEK = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+export const WEEK = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
 
-// 主题名称与副标题名称
-export const title = "大薪薪大数据中心";
-export const subtitle = ["数据分析1", "数据分析2", "vue-big-screen"];
+export const TITLE = ["大薪薪大数据中心", "大薪薪BOSS实时数据大屏"];
+
+export const ROUTERNAME = ["切换到boss", "切换到数据中心"];
+
