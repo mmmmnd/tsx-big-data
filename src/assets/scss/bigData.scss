@@ -1,0 +1,40 @@
+#bigData{
+  width: 100%;
+  .customer{
+    width: 40%;
+    height: 500px;
+    .title-customer{
+      h5{
+        width: 100px;
+      }
+      .date-pagination{
+        .swiper-pagination-bullet{
+          width: 130px;
+          height: 20px;
+          text-align: center;
+          border-radius: 0;
+          color: #fff;
+          opacity:unset;
+           &:hover{
+            background-color: #0283d6;
+           }
+        }
+        .swiper-pagination-bullet-active{
+          background-color: #0283d6;
+        }
+      }
+    }
+    .nav-customer{
+      height: 60px;
+      background: #0d1e40;
+
+      .dv-dig-flop{
+        height: 20px;
+        width:100%;
+      }
+    }
+  }
+  .revenue{
+    width: 60%;
+  }
+}

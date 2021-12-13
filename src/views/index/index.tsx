@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 09:14:26
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-09 16:22:26
+ * @LastEditTime: 2021-12-13 10:54:15
  */
 import "@/assets/scss/index.scss";
 import {
@@ -20,10 +20,11 @@ import { useRoute, RouterView } from 'vue-router';
 import { formatTime } from "@/utils/date";
 import { WEEK, TITLE, ROUTERNAME } from "@/config/index";
 import useDraw from "@/utils/useDraw";
-import vTitle from "@/components/title";
+import gTitle from "@/components/title";
+
 export default defineComponent({
   components: {
-    vTitle
+    gTitle
   },
   name: 'Index',
   setup() {
@@ -86,7 +87,7 @@ export default defineComponent({
               loading.value
                 ? <dv-loading>Loading...</dv-loading>
                 : <div class="host-body">
-                  <v-title timeInfo={timeInfo}
+                  <g-title timeInfo={timeInfo}
                     title={TITLE[index.value]}
                     routerName={ROUTERNAME[index.value]}
                     color={getColorStyle.value()} />

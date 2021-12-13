@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-09 15:15:59
+ * @LastEditTime: 2021-12-09 18:01:05
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [{
       path: 'bigData',
       name: 'Bigdata',
-      component: () => import("../views/bigData"),
+      component: () => import("../views/bigData/index"),
     }, {
       path: 'boss',
       name: 'Boss',
