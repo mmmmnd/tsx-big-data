@@ -1,23 +1,18 @@
-<!--
- * @Author: 莫卓才
- * @eMail: handsome.mo@foxmail.com
- * @Descripttion: 描述
- * @version: 1.0.0
- * @Date: 2021-12-07 10:20:40
- * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-16 10:49:25
--->
 ## 一、这是个什么的项目？
 
-基于vue3 开发大屏可视化图表
+基于 Vue3 开发一套可视化数据大屏。
 
 ## 二、项目包含什么功能？
-常量采用枚举形式
-各个模块按组件式开发 组件前缀 v -> 当前 g ->全局
-项目按照 1920*1080 比例设计，支持任何尺寸的同比例缩放
-### 2.1.前端技术栈
 
-* 使用 Vue3 、TypeScript 、 Tsx 、 Echarts 、 Data-view 、 scss
+### 2.1.技术栈
+
+* 使用 Vue 、TypeScript 、 Tsx 、Echarts 、Swiper 、Data-view 、Eslint 、Sass
+
+### 2.4.优势
+
+常量采用Ts独有的枚举
+全采用组件式开发 组件前缀 v -> 当前 g -> 全局
+项目按照 1920*1080 比例设计，支持任何尺寸的同比例缩放
 
 ## 三、如何学习？
 
@@ -34,22 +29,22 @@ $ git clone https://github.com/mmmmnd/tsx-big-data.git
 
 ```
 # 加载依赖
-$ npm install or cnpm install or yarn install 
+$ yarn install OR cnpm install OR npm install;
 ```
 
 ```
-# 运行
-$ npm run serve or cnpm run serve or yarn run serve 
+# 运行项目
+$ yarn serve OR cnpm run serve OR npm run serve;
 ```
-### 3.3.依赖错误
-如果安装完依赖 @jiaminghi 报错 项目运行提示
+### 3.2.依赖报错
+如果 加载完依赖运行项目 <font color='red'> 报错 </font>
 
-``` 
+```
+# @jiaminghi
 $ <template v-for> key should be placed on the <template> tag
 ```
 
-替换other_modules/@jiaminghi.rar 解压替换 node_modules 即可
-
+把项目根目录下`other_modules/@jiaminghi.rar` 解压并替换 node_modules 同名文件即可
 
 ## License
 
