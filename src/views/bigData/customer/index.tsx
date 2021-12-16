@@ -5,14 +5,14 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-13 17:50:51
+ * @LastEditTime: 2021-12-16 11:09:29
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive, ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
 import { DATE } from "@/config/index";
 import { enumConfigIndex } from "@/config/enum";
-import vChart from "../chart"
+import vChart from "../component/chart"
 import gDoubleDealer from "@/components/doubleDealer"
 import SwiperCore, { Autoplay, Pagination, FreeMode, Thumbs } from 'swiper'
 
