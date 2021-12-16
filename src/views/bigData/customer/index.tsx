@@ -5,14 +5,14 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-16 11:52:26
+ * @LastEditTime: 2021-12-16 15:21:07
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive, ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
 import { DATE } from "@/config/index";
 import { enumConfigIndex } from "@/config/enum";
-import vChart from "../component/chart"
+import vCustomerChart from "../component/customerChart"
 import gDoubleDealer from "@/components/doubleDealer"
 import SwiperCore, { Autoplay, Pagination, FreeMode, Thumbs } from 'swiper'
 
@@ -20,7 +20,7 @@ SwiperCore.use([Autoplay, Pagination, FreeMode, Thumbs]);
 
 export default defineComponent({
   components: {
-    vChart,
+    vCustomerChart,
     Swiper,
     SwiperSlide,
     gDoubleDealer
@@ -124,7 +124,7 @@ export default defineComponent({
             pagination={swiper_options.pagination}
             class="mySwiper"> {data.map(item =>
               <swiper-slide>
-                <vChart Lines={item.Lines}
+                <v-customer-chart Lines={item.Lines}
                   xNames={item.xNames}
                   lists={item.lists} />
               </swiper-slide>)}
