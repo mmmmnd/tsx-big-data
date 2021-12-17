@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 09:45:14
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-17 15:31:02
+ * @LastEditTime: 2021-12-17 18:11:34
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -27,7 +27,6 @@ export default defineComponent({
   setup(props) {
 
     const colors = ['#0278e6', '#34d160', '#fcdf39', '#f19611', '#00c6ff', '#f76363'];
-    const total = (props.data as Array<string>).reduce((prev: number, curr: any) => prev + curr.value, 0);
 
     let options = shallowReactive({ color: null, legend: null, tooltip: null, series: null })
 
@@ -64,10 +63,15 @@ export default defineComponent({
           label: {
             show: true,
             normal: {
-              position: 'outside',
+              position: 'inner',
               fontSize: 16,
+              textStyle: {
+                fontWeight: 'normal',
+                fontSize: '16',
+                color: '#fff',
+              },
               formatter: (params) => {
-                return params.name + params.value + '元';
+                return params.value + '元';
               }
             }
           },
