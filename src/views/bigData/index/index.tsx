@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-17 16:12:32
+ * @LastEditTime: 2021-12-17 16:24:48
  */
 import "@/assets/scss/bigData.scss";
 import { defineComponent } from 'vue';
@@ -31,6 +31,8 @@ export default defineComponent({
               <v-revenue />
             </div>
           </div>
+
+          <div class="d-flex item-box"></div>
         </div>
       </>
     );
