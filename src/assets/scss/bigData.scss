@@ -1,40 +1,56 @@
 #bigData{
   width: 100%;
-  .customer{
-    width: 40%;
-    height: 500px;
-    .title-customer{
-      h5{
-        width: 100px;
-      }
-      .date-pagination{
-        .swiper-pagination-bullet{
-          width: 130px;
-          height: 20px;
-          text-align: center;
-          border-radius: 0;
-          color: #fff;
-          opacity:unset;
-           &:hover{
+  .item-box{
+    width: 100%;
+    .customer{
+      width: 35%;
+      height: 380px;
+      .title-customer{
+        h5{
+          width: 100px;
+        }
+        .date-pagination{
+          .swiper-pagination-bullet{
+            width: 130px;
+            height: 20px;
+            text-align: center;
+            border-radius: 0;
+            color: #fff;
+            opacity:unset;
+            background:unset;
+            &:hover{
+              background-color: #0283d6;
+            }
+          }
+          .swiper-pagination-bullet-active{
             background-color: #0283d6;
-           }
+          }
         }
-        .swiper-pagination-bullet-active{
-          background-color: #0283d6;
+      }
+      .nav-customer{
+        height: 60px;
+        .dv-dig-flop{
+          height: 20px;
         }
       }
     }
-    .nav-customer{
-      height: 60px;
-      background: #0d1e40;
-
-      .dv-dig-flop{
-        height: 20px;
-        width:100%;
+    .revenue{
+      width: 63%;
+      height: 380px;
+      .title-revenue{
+        position: absolute;
+        top: 10px;
       }
+      .number-revenue{
+        .title{
+          width: unset;
+        }
+        .dv-dig-flop{
+          height: 20px;
+          width: 200px;  
+        }
+      }
+      
     }
-  }
-  .revenue{
-    width: 60%;
   }
 }

@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-13 16:37:26
+ * @LastEditTime: 2021-12-17 16:12:32
  */
 import "@/assets/scss/bigData.scss";
 import { defineComponent } from 'vue';
@@ -22,10 +22,14 @@ export default defineComponent({
 
     return () => (
       <>
-        <div id="bigData">
-          <div class="d-flex customer">
-            <v-customer />
-            <v-revenue />
+        <div id="bigData" class="d-flex jc-between">
+          <div class="d-flex item-box">
+            <div class="d-flex jc-start customer">
+              <v-customer />
+            </div>
+            <div class="d-flex jc-end revenue">
+              <v-revenue />
+            </div>
           </div>
         </div>
       </>

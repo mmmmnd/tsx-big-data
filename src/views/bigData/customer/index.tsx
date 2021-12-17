@@ -5,13 +5,13 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-16 15:21:07
+ * @LastEditTime: 2021-12-17 16:20:02
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive, ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
 import { DATE } from "@/config/index";
-import { enumConfigIndex } from "@/config/enum";
+import { enumConfigCustomer } from "@/config/enum";
 import vCustomerChart from "../component/customerChart"
 import gDoubleDealer from "@/components/doubleDealer"
 import SwiperCore, { Autoplay, Pagination, FreeMode, Thumbs } from 'swiper'
@@ -28,19 +28,19 @@ export default defineComponent({
   name: 'Customer',
   setup() {
 
-    const data = reactive(
+    const dataChart = reactive(
       [
         {
-          Lines: ["结算单位", "协议单位"],
+          lines: ["结算单位", "协议单位"],
           xNames: ["2021", "2020", "2019", "2018"],
           lists: [[67, 97, 51, 38], [94, 23, 43, 18]]
         }, {
-          Lines: ["结算单位", "协议单位"],
+          lines: ["结算单位", "协议单位"],
           xNames: ["第一季度", "第二季度", "第三季度", "第四季度"],
           lists: [[67, 97, 51, 38], [94, 23, 43, 18]]
         },
         {
-          Lines: ["结算单位", "协议单位"],
+          lines: ["结算单位", "协议单位"],
           xNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
           lists: [
             [67, 97, 51, 38, 67, 97, 51, 38, 94, 23, 43, 18],
@@ -51,15 +51,15 @@ export default defineComponent({
     )
 
     const navCustomer = reactive([{
-      name: "当年单位新增",
+      name: enumConfigCustomer.YEARS_NAME,
       number: [0],
       fontSize: 20,
     }, {
-      name: "当年单位新增",
+      name: enumConfigCustomer.QUARTER_NAME,
       number: [0],
       fontSize: 20,
     }, {
-      name: "当年单位新增",
+      name: enumConfigCustomer.MONTH_NAME,
       number: [0],
       fontSize: 20,
     }])
@@ -99,10 +99,10 @@ export default defineComponent({
       <>
         <dv-border-box-9 class="p-4">
           <div class="d-flex title-customer">
-            <h5 class="fs-md text-blue">{enumConfigIndex.CUSTOMER_NAME}</h5>
+            <h5 class="fs-md text-blue">{enumConfigCustomer.CUSTOMER_NAME}</h5>
             <div class="d-flex jc-end date-pagination"></div>
           </div>
-          <swiper class="my-3 nav-customer"
+          <swiper class="my-1 nav-customer"
             freeMode={true}
             watchSlidesProgress={true}
             spaceBetween={10}
@@ -120,11 +120,11 @@ export default defineComponent({
           <swiper spaceBetween={30}
             centeredSlides={true}
             thumbs={swiper_options.thumbs}
-            autoplay={swiper_options.autoplay}
+            // autoplay={swiper_options.autoplay}
             pagination={swiper_options.pagination}
-            class="mySwiper"> {data.map(item =>
+            class="mySwiper"> {dataChart.map(item =>
               <swiper-slide>
-                <v-customer-chart Lines={item.Lines}
+                <v-customer-chart lines={item.lines}
                   xNames={item.xNames}
                   lists={item.lists} />
               </swiper-slide>)}

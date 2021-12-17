@@ -5,12 +5,12 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:25:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-13 17:51:16
+ * @LastEditTime: 2021-12-17 15:28:38
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
 const PropsType = {
-  Lines: {
+  lines: {
     type: Array,
     default: [],
     require: true
@@ -31,8 +31,6 @@ export default defineComponent({
   props: PropsType,
   setup(props) {
     const datas: any[] = [];
-    const dataCoords: any[] = [];
-
     const config = {
       colors: ['#00f8ff', '#00f15a', '#0696f9', '#dcf776'],
       imgs: [
@@ -43,59 +41,54 @@ export default defineComponent({
       ]
     };
 
-    let options = shallowReactive({ backgroundColor: null, grid: null, legend: null, tooltip: null, yAxis: null, xAxis: null, series: null })
+    let options = shallowReactive({ grid: null, legend: null, tooltip: null, yAxis: null, xAxis: null, series: null })
 
-    const getData = () => {
-      const { lists, xNames, Lines } = props;
-      (xNames as Array<string>).forEach((item, i) => {
-        const coords: Array<any> = lists[i] && (lists[i] as Array<number>).map((list, j) => [xNames[j], list])
-        dataCoords.push(coords)
-      });
+    const dataCoords: any[] = (props.xNames as Array<string>).map((item, i) => {
+      return props.lists[i] && (props.lists[i] as Array<number>).map((list, j) => [props.xNames[j], list])
+    });
 
-      (Lines as Array<string>).forEach((item, index) => {
-        datas.push({
-          symbolSize: 150,
-          symbol: config.imgs[index],
-          name: item,
-          type: "line",
-          data: lists[index],
-          itemStyle: {
-            normal: {
-              borderWidth: 5,
-              color: config.colors[index],
-            }
+    (props.lines as Array<string>).forEach((item, index) => {
+      datas.push({
+        symbolSize: 150,
+        symbol: config.imgs[index],
+        name: item,
+        type: "line",
+        data: props.lists[index],
+        itemStyle: {
+          normal: {
+            borderWidth: 5,
+            color: config.colors[index],
           }
-        }, {
-          name: item,
-          type: 'lines',
-          coordinateSystem: 'cartesian2d',
-          symbolSize: 30,
-          polyline: true,
-          effect: {
-            show: true,
-            trailLength: 0,
-            period: 10,
-            symbolSize: 150,
-            symbol: config.imgs[index]
-          },
-          lineStyle: {
-            normal: {
-              width: 1,
-              opacity: 0.6,
-              curveness: 0.2
-            }
-          },
-          data: [{
-            coords: dataCoords[index]
-          }],
-          symbol: "arrow",
-        })
+        }
+      }, {
+        name: item,
+        type: 'lines',
+        coordinateSystem: 'cartesian2d',
+        symbolSize: 30,
+        polyline: true,
+        effect: {
+          show: true,
+          trailLength: 0,
+          period: 10,
+          symbolSize: 150,
+          symbol: config.imgs[index]
+        },
+        lineStyle: {
+          normal: {
+            width: 1,
+            opacity: 0.6,
+            curveness: 0.2
+          }
+        },
+        data: [{
+          coords: dataCoords[index]
+        }],
+        symbol: "arrow",
       })
-    }
+    })
 
     watch(() => props, (val: any) => {
       options = {
-        backgroundColor: '#0e2147',
         grid: {
           left: '5%',
           top: '10%',
@@ -108,18 +101,19 @@ export default defineComponent({
           itemWidth: 12,
           itemHeight: 150,
           textStyle: {
-            color: "#00ffff",
+            color: "#fff",
             fontSize: 14
           },
           left: "5%",
-          top: "-14%"
+          top: "-21%"
         },
         tooltip: {
           show: true,
+          trigger: 'axis',
           textStyle: {
             color: "#ffffff",
             fontSize: 14
-          }
+          },
         },
         yAxis: [{
           type: 'value',
@@ -153,7 +147,6 @@ export default defineComponent({
               fontSize: '14',
               lineHeight: 22
             }
-
           },
           data: val.xNames,
         }],
@@ -165,10 +158,8 @@ export default defineComponent({
       }
     )
 
-    getData();
-
     return () => {
-      const height = "350px", width = "740px";
+      const height = "260px", width = "650px";
       return <echart options={options} height={height} width={width} />
     }
   }
