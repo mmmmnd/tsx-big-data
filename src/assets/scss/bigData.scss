@@ -52,5 +52,42 @@
       }
       
     }
+    .spending{
+      width: 100%;
+      .info-wrapper{
+        width: 50%;
+        .info-wrapper{
+          width: 50%;
+        }
+        .info-right{
+          width: 50%;
+          .month-wrapper{
+            .dv-dig-flop{
+              height: 30px;
+              width: 200px;
+            }
+          }
+        }
+      }
+      .table-wrapper{
+        width: 50%;
+      }
+    }
+  }
+}
+
+.count-wrapper{
+  position: relative;
+  .count-main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    .dv-dig-flop{
+      height: 30px;
+      width: 200px;
+    }
   }
 }

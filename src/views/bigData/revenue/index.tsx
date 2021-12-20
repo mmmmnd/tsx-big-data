@@ -5,10 +5,10 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 10:59:47
+ * @LastEditTime: 2021-12-20 16:10:10
  */
 import { defineComponent, reactive } from 'vue';
-import { enumConfigrevenue } from "@/config/enum";
+import { enumConfigRevenue } from "@/config/enum";
 import vRevenueChart from "../component/revenueChart"
 import gPie from "@/components/pie"
 import gDoubleDealer from "@/components/doubleDealer"
@@ -56,7 +56,7 @@ export default defineComponent({
     return () => (
       <>
         <dv-border-box-9 class="p-4">
-          <h5 class="fs-md text-blue title-revenue">{enumConfigrevenue.MONTHLY_REVENUE_NAME}</h5>
+          <h5 class="fs-md text-blue title-revenue">{enumConfigRevenue.MONTHLY_REVENUE_NAME}</h5>
           <div class="pt-3 d-flex jc-between">
             <v-revenue-chart lines={dataChart.lines}
               xNames={dataChart.xNames}
@@ -64,10 +64,10 @@ export default defineComponent({
             <div class="d-flex flex-column">
               <div class="d-flex number-revenue jc-center">
                 <div class="d-flex flex-column text-center">
-                  <g-DoubleDealer class="mt-2 dv-dig-flop"
+                  <g-double-dealer class="mt-2 dv-dig-flop"
                     number={dataChart.number}
                     fontSize={dataChart.fontSize} />
-                  <p class="mt-1 text-blue">{enumConfigrevenue.ANNUAL_PROFIT_NAME}</p>
+                  <p class="mt-1 text-blue">{enumConfigRevenue.ANNUAL_PROFIT_NAME}</p>
                 </div>
               </div>
 

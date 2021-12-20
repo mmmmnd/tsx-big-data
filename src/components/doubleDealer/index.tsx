@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 10:35:23
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-17 11:43:31
+ * @LastEditTime: 2021-12-20 15:26:02
  */
 import { defineComponent, computed } from 'vue'
 
@@ -17,6 +17,10 @@ const PropsType = {
   fontSize: {
     type: Number,
     default: 20
+  },
+  content: {
+    type: Number,
+    default: '{nt}'
   }
 } as const
 
@@ -29,7 +33,7 @@ export default defineComponent({
       return {
         number: props.number,
         style: { fontSize: props.fontSize },
-        content: '{nt}'
+        content: props.content
       }
     })
 

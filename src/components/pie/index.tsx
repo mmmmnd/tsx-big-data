@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 09:44:43
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 11:00:50
+ * @LastEditTime: 2021-12-20 16:19:11
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -60,7 +60,7 @@ export default defineComponent({
         color: colors,
         legend: {
           orient: 'horizontal',
-          top: props.legendTop,
+          top: val.legendTop,
           itemGap: 50,
           itemWidth: 16,
           itemHeight: 16,
@@ -68,7 +68,7 @@ export default defineComponent({
             color: "#fff",
             fontSize: 16
           },
-          data: props.lines,
+          data: val.lines,
         },
         tooltip: {
           trigger: 'item',
@@ -81,7 +81,7 @@ export default defineComponent({
           }
         },
         series: [{
-          radius: props.seriesRadius,
+          radius: val.seriesRadius,
           center: ["50%", "50%"],
           type: 'pie',
           label: {
@@ -98,9 +98,9 @@ export default defineComponent({
               }
             }
           },
-          data: props.data
+          data: val.data
         }, {
-          radius: props.seriesRadius,
+          radius: val.seriesRadius,
           type: 'pie',
           label: {
             normal: {
@@ -116,7 +116,7 @@ export default defineComponent({
               }
             }
           },
-          data: props.data
+          data: val.data
         }]
       }
     },

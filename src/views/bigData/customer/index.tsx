@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-17 16:20:02
+ * @LastEditTime: 2021-12-20 16:10:01
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive, ref } from 'vue'
@@ -110,7 +110,7 @@ export default defineComponent({
             onSwiper={setThumbsSwiper}>{navCustomer.map(item =>
               <swiper-slide class="swiper-no-swiping">
                 <div class="d-flex flex-column text-center">
-                  <g-DoubleDealer class="mt-2 dv-dig-flop"
+                  <g-double-dealer class="mt-2 dv-dig-flop"
                     number={item.number}
                     fontSize={item.fontSize} />
                   <p class="mt-1 text-blue">{item.name}</p>
@@ -120,7 +120,7 @@ export default defineComponent({
           <swiper spaceBetween={30}
             centeredSlides={true}
             thumbs={swiper_options.thumbs}
-            // autoplay={swiper_options.autoplay}
+            autoplay={swiper_options.autoplay}
             pagination={swiper_options.pagination}
             class="mySwiper"> {dataChart.map(item =>
               <swiper-slide>
