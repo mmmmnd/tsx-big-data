@@ -5,18 +5,18 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-17 16:21:35
+ * @LastEditTime: 2021-12-20 10:59:47
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigrevenue } from "@/config/enum";
 import vRevenueChart from "../component/revenueChart"
-import vRevenuePie from "../component/revenuePie"
+import gPie from "@/components/pie"
 import gDoubleDealer from "@/components/doubleDealer"
 
 export default defineComponent({
   components: {
     vRevenueChart,
-    vRevenuePie,
+    gPie,
     gDoubleDealer
   },
   name: 'Revenue',
@@ -34,6 +34,11 @@ export default defineComponent({
     })
 
     const dataPie = reactive({
+      height: "300px",
+      width: "420px",
+      seriesPosition: "outside",
+      seriesRadius: ['30%', '50%'],
+      legendTop: "5%",
       lines: ["年收入", "年支出"],
       data: [{
         name: '年收入',
@@ -66,8 +71,13 @@ export default defineComponent({
                 </div>
               </div>
 
-              <vRevenuePie lines={dataPie.lines}
-                data={dataPie.data} />
+              <g-pie height={dataPie.height}
+                width={dataPie.width}
+                data={dataPie.data}
+                lines={dataPie.lines}
+                legendTop={dataPie.legendTop}
+                seriesRadius={dataPie.seriesRadius}
+                seriesPosition={dataPie.seriesPosition} />
             </div>
           </div>
 

@@ -3,13 +3,23 @@
  * @eMail: handsome.mo@foxmail.com
  * @Descripttion: 描述
  * @version: 1.0.0
- * @Date: 2021-12-17 09:45:14
+ * @Date: 2021-12-20 09:44:43
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-17 18:11:34
+ * @LastEditTime: 2021-12-20 11:00:50
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
 const PropsType = {
+  height: {
+    type: String,
+    default: "300px",
+    require: true
+  },
+  width: {
+    type: String,
+    default: "420px",
+    require: true
+  },
   lines: {
     type: Array,
     default: [],
@@ -18,6 +28,21 @@ const PropsType = {
   data: {
     type: Array,
     default: [],
+    require: true
+  },
+  legendTop: {
+    type: String,
+    default: "0%",
+    require: true
+  },
+  seriesPosition: {
+    type: String,
+    default: "outside",
+    require: true
+  },
+  seriesRadius: {
+    type: Array,
+    default: ["0", "0"],
     require: true
   },
 } as const
@@ -35,7 +60,7 @@ export default defineComponent({
         color: colors,
         legend: {
           orient: 'horizontal',
-          top: "5%",
+          top: props.legendTop,
           itemGap: 50,
           itemWidth: 16,
           itemHeight: 16,
@@ -52,16 +77,32 @@ export default defineComponent({
             fontSize: 14
           },
           formatter: function (params) {
-            return params.name + '：' + params.value + '元<br>占比：' + params.percent.toFixed(2) + '%'
+            return params.name + '：' + params.value + '<br>占比：' + params.percent.toFixed(2) + '%'
           }
         },
         series: [{
-          name: "",
-          radius: ['30%', '50%'],
+          radius: props.seriesRadius,
           center: ["50%", "50%"],
           type: 'pie',
           label: {
-            show: true,
+            normal: {
+              position: 'outside',
+              fontSize: 16,
+              textStyle: {
+                fontWeight: 'normal',
+                fontSize: '16',
+                color: '#fff',
+              },
+              formatter: (params) => {
+                return params.name + '：' + params.value;
+              }
+            }
+          },
+          data: props.data
+        }, {
+          radius: props.seriesRadius,
+          type: 'pie',
+          label: {
             normal: {
               position: 'inner',
               fontSize: 16,
@@ -71,14 +112,9 @@ export default defineComponent({
                 color: '#fff',
               },
               formatter: (params) => {
-                return params.value + '元';
+                return params.percent.toFixed(2) + '%';
               }
             }
-          },
-          labelLine: {
-            length: 1,
-            length2: 20,
-            smooth: true
           },
           data: props.data
         }]
@@ -91,8 +127,7 @@ export default defineComponent({
 
 
     return () => {
-      const height = "300px", width = "420px";
-      return <echart options={options} height={height} width={width} />
+      return <echart options={options} height={props.height} width={props.width} />
     }
   }
 })
