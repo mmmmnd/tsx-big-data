@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 09:44:43
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:19:11
+ * @LastEditTime: 2021-12-20 16:41:38
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -61,7 +61,6 @@ export default defineComponent({
         legend: {
           orient: 'horizontal',
           top: val.legendTop,
-          itemGap: 50,
           itemWidth: 16,
           itemHeight: 16,
           textStyle: {

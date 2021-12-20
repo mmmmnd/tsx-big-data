@@ -5,11 +5,11 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 16:38:44
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:17:04
+ * @LastEditTime: 2021-12-20 16:40:28
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
-import { enumConfigSpending } from "@/config/enum";
+import { enumConfigAccount } from "@/config/enum";
 import gPie from "@/components/pie"
 import gDashboard from "@/components/dashboard"
 import gTableSwiper from "@/components/tableSwiper"
@@ -31,16 +31,25 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
       legendTop: "0%",
-      lines: ["工资付款", "其他付款", "转账"],
+      lines: ["津贴", "减免", "稳岗", "未分类", "工资", "其他"],
       data: [{
-        name: '工资付款',
-        value: 789
+        name: '津贴',
+        value: 2363
       }, {
-        name: '其他付款',
-        value: 2789
+        name: '减免',
+        value: 11344
       }, {
-        name: '转账',
-        value: 2789
+        name: '稳岗',
+        value: 1253
+      }, {
+        name: '未分类',
+        value: 4643
+      }, {
+        name: '工资',
+        value: 7854
+      }, {
+        name: '其他',
+        value: 4534
       }]
     })
 
@@ -79,7 +88,7 @@ export default defineComponent({
       <>
         <dv-border-box-12 class="p-4">
           <div class="d-flex title-customer">
-            <h5 class="fs-md text-blue">{enumConfigSpending.SPENDING_NAME}</h5>
+            <h5 class="fs-md text-blue">{enumConfigAccount.ACCOUNT_NAME}</h5>
           </div>
           <div class="d-flex">
             <div class="d-flex info-wrapper">
@@ -97,7 +106,7 @@ export default defineComponent({
                   <g-dashboard height={dataDashboard.height}
                     width={dataDashboard.width} />
                   <div class="d-flex flex-column jc-center ai-center count-main">
-                    <p class="fs-xl">{enumConfigSpending.STROKE_COUNT_NAME}</p>
+                    <p class="fs-xl">{enumConfigAccount.STROKE_COUNT_NAME}</p>
                     <g-double-dealer class="mt-4 dv-dig-flop"
                       number={dataDoubleDealer.number}
                       fontSize={dataDoubleDealer.fontSize} />
@@ -108,7 +117,7 @@ export default defineComponent({
                     content={dataDoubleDealer.content}
                     number={dataDoubleDealer.number}
                     fontSize={dataDoubleDealer.fontSize} />
-                  <p class="fs-xl mt-4">{enumConfigSpending.LAST_MONTH_NAME}</p>
+                  <p class="fs-xl mt-4">{enumConfigAccount.LAST_MONTH_NAME}</p>
                 </div>
               </div>
 
