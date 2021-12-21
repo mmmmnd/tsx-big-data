@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:38:17
+ * @LastEditTime: 2021-12-21 09:21:54
  */
 import "@/assets/scss/bigData.scss";
 import { defineComponent } from 'vue';
@@ -13,13 +13,17 @@ import vCustomer from "../customer";
 import vRevenue from "../revenue";
 import vSpending from "../spending";
 import vAccount from "../account";
+import vPersonnel from "../personnel";
+import vPayment from "../payment";
 
 export default defineComponent({
   components: {
     vCustomer,
     vRevenue,
     vSpending,
-    vAccount
+    vAccount,
+    vPersonnel,
+    vPayment
   },
   name: 'BigData',
   setup() {
@@ -46,6 +50,15 @@ export default defineComponent({
           <div class="d-flex item-box">
             <div class="spending">
               <v-account />
+            </div>
+          </div>
+
+          <div class="d-flex jc-between item-box">
+            <div class="d-flex jc-start personnel">
+              <v-personnel />
+            </div>
+            <div class="d-flex jc-end payment">
+              <v-payment />
             </div>
           </div>
         </div>

@@ -73,6 +73,17 @@
         width: 50%;
       }
     }
+    .personnel{
+      width: 49%;
+      height: 380px;
+      .personnel-info{
+        width: 50%;
+      }
+    }
+    .payment{
+      width: 49%;
+      height: 380px;
+    }
   }
 }
 
@@ -89,5 +100,10 @@
       height: 30px;
       width: 200px;
     }
+  }
+  .count-text{
+    position: absolute;
+    top: 87%;
+    left: 27%;
   }
 }

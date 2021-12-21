@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 10:35:23
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 15:26:02
+ * @LastEditTime: 2021-12-21 09:05:54
  */
 import { defineComponent, computed } from 'vue'
 
@@ -19,7 +19,7 @@ const PropsType = {
     default: 20
   },
   content: {
-    type: Number,
+    type: String,
     default: '{nt}'
   }
 } as const
