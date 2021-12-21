@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:10:01
+ * @LastEditTime: 2021-12-21 11:58:36
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive, ref } from 'vue'
@@ -98,9 +98,13 @@ export default defineComponent({
     return () => (
       <>
         <dv-border-box-9 class="p-4">
-          <div class="d-flex title-customer">
+          <div class="d-flex jc-between title-customer">
             <h5 class="fs-md text-blue">{enumConfigCustomer.CUSTOMER_NAME}</h5>
-            <div class="d-flex jc-end date-pagination"></div>
+            <div class="d-flex flex-column">
+              <div class="date-pagination"></div>
+              <dv-decoration-2 class="dv-dec-2"
+                color={['#00c2ff', '#000000']} />
+            </div>
           </div>
           <swiper class="my-1 nav-customer"
             freeMode={true}

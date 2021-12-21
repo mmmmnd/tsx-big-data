@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 16:38:44
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:40:28
+ * @LastEditTime: 2021-12-21 15:25:48
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -91,7 +91,7 @@ export default defineComponent({
             <h5 class="fs-md text-blue">{enumConfigAccount.ACCOUNT_NAME}</h5>
           </div>
           <div class="d-flex">
-            <div class="d-flex info-wrapper">
+            <div class="d-flex flex-nowrap info-wrapper">
               <div class="info-left">
                 <g-pie height={dataPie.height}
                   width={dataPie.width}
@@ -118,9 +118,12 @@ export default defineComponent({
                     number={dataDoubleDealer.number}
                     fontSize={dataDoubleDealer.fontSize} />
                   <p class="fs-xl mt-4">{enumConfigAccount.LAST_MONTH_NAME}</p>
+                  <dv-decoration-1 class="dv-dec-1"
+                    color={['transparent', '#00c2ff',]} />
                 </div>
               </div>
-
+              <dv-decoration-3 class="dv-dec-3"
+                color={['transparent', '#00c2ff',]} />
             </div>
             <div class="table-wrapper">
               <dv-border-box-7>

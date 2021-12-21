@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 16:38:44
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:17:04
+ * @LastEditTime: 2021-12-21 15:13:51
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -109,9 +109,12 @@ export default defineComponent({
                     number={dataDoubleDealer.number}
                     fontSize={dataDoubleDealer.fontSize} />
                   <p class="fs-xl mt-4">{enumConfigSpending.LAST_MONTH_NAME}</p>
+                  <dv-decoration-1 class="dv-dec-1"
+                    color={['transparent', '#00c2ff',]} />
                 </div>
               </div>
-
+              <dv-decoration-3 class="dv-dec-3"
+                color={['transparent', '#00c2ff',]} />
             </div>
             <div class="table-wrapper">
               <dv-border-box-7>

@@ -127,7 +127,7 @@ module.exports = {
   // 所有 webpack-dev-server 的选项都支持
   // webpack-dev-server 文档 https://webpack.js.org/configuration/dev-server/
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8080,
     disableHostCheck: true,
     // proxy: {

@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:25:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-17 15:28:38
+ * @LastEditTime: 2021-12-21 14:25:07
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -159,7 +159,7 @@ export default defineComponent({
     )
 
     return () => {
-      const height = "260px", width = "650px";
+      const height = "250px", width = "650px";
       return <echart options={options} height={height} width={width} />
     }
   }

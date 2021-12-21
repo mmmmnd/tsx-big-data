@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 16:52:53
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 09:24:06
+ * @LastEditTime: 2021-12-21 16:33:44
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -76,16 +76,18 @@ export default defineComponent({
           <div class="d-flex title-customer">
             <h5 class="fs-md text-blue">{enumConfigPersonnel.PERSONNEL_NAME}</h5>
           </div>
-          <div class="d-flex">
-
-            <g-pie height={dataPie.height}
-              width={dataPie.width}
-              data={dataPie.data}
-              lines={dataPie.lines}
-              legendTop={dataPie.legendTop}
-              seriesRadius={dataPie.seriesRadius}
-              seriesPosition={dataPie.seriesPosition} />
-
+          <div class="d-flex ">
+            <div class="d-flex flex-column pie-wrapper">
+              <g-pie height={dataPie.height}
+                width={dataPie.width}
+                data={dataPie.data}
+                lines={dataPie.lines}
+                legendTop={dataPie.legendTop}
+                seriesRadius={dataPie.seriesRadius}
+                seriesPosition={dataPie.seriesPosition} />
+              <dv-decoration-1 class="dv-dec-1"
+                color={['#00c2ff', 'transparent',]} />
+            </div>
             <div class="d-flex flex-wrap personnel-info">{dataDoubleDealer.map(item =>
               <div class="count-wrapper">
                 <g-dashboard height={dataDashboard.height}

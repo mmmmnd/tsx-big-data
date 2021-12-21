@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:10:10
+ * @LastEditTime: 2021-12-21 14:47:17
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigRevenue } from "@/config/enum";
@@ -62,22 +62,25 @@ export default defineComponent({
               xNames={dataChart.xNames}
               lists={dataChart.lists} />
             <div class="d-flex flex-column">
-              <div class="d-flex number-revenue jc-center">
-                <div class="d-flex flex-column text-center">
-                  <g-double-dealer class="mt-2 dv-dig-flop"
-                    number={dataChart.number}
-                    fontSize={dataChart.fontSize} />
-                  <p class="mt-1 text-blue">{enumConfigRevenue.ANNUAL_PROFIT_NAME}</p>
+              <dv-border-box-8 class="dv-dor-8">
+                <div class="d-flex number-revenue jc-center">
+                  <div class="d-flex flex-column text-center">
+                    <g-double-dealer class="mt-2 dv-dig-flop"
+                      number={dataChart.number}
+                      fontSize={dataChart.fontSize} />
+                    <p class="mt-1 text-blue">{enumConfigRevenue.ANNUAL_PROFIT_NAME}</p>
+                  </div>
                 </div>
-              </div>
 
-              <g-pie height={dataPie.height}
-                width={dataPie.width}
-                data={dataPie.data}
-                lines={dataPie.lines}
-                legendTop={dataPie.legendTop}
-                seriesRadius={dataPie.seriesRadius}
-                seriesPosition={dataPie.seriesPosition} />
+                <g-pie height={dataPie.height}
+                  width={dataPie.width}
+                  data={dataPie.data}
+                  lines={dataPie.lines}
+                  legendTop={dataPie.legendTop}
+                  seriesRadius={dataPie.seriesRadius}
+                  seriesPosition={dataPie.seriesPosition} />
+              </dv-border-box-8>
+
             </div>
           </div>
 
