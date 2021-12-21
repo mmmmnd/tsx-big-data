@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 09:27:35
+ * @LastEditTime: 2021-12-21 09:31:26
  */
 export enum enumConfigCustomer {
   CUSTOMER_NAME = "客户信息",
@@ -33,4 +33,8 @@ export enum enumConfigAccount {
 
 export enum enumConfigPersonnel {
   PERSONNEL_NAME = "人员信息",
+}
+
+export enum enumConfigPayment {
+  PAYMENT_NAME = "薪酬信息"
 }
