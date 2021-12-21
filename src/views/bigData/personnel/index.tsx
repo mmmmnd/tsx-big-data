@@ -73,8 +73,8 @@ export default defineComponent({
     return () => (
       <>
         <dv-border-box-9 class="p-4">
-          <div class="d-flex title-customer">
-            <h5 class="fs-md text-blue">{enumConfigPersonnel.PERSONNEL_NAME}</h5>
+          <div class="d-flex title">
+            <h5 class="fs-md text-blue">{enumConfigPersonnel.TITLE_NAME}</h5>
           </div>
           <div class="d-flex ">
             <div class="d-flex flex-column pie-wrapper">

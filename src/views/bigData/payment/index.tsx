@@ -48,8 +48,8 @@ export default defineComponent({
     return () => (
       <>
         <dv-border-box-9 class="p-4">
-          <div class="d-flex title-customer">
-            <h5 class="fs-md text-blue">{enumConfigPayment.PAYMENT_NAME}</h5>
+          <div class="d-flex title">
+            <h5 class="fs-md text-blue">{enumConfigPayment.TITLE_NAME}</h5>
           </div>
           <div class="d-flex">
             <v-payment-bubble data={dataBubble} />

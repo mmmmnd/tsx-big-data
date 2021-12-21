@@ -98,8 +98,8 @@ export default defineComponent({
     return () => (
       <>
         <dv-border-box-9 class="p-4">
-          <div class="d-flex jc-between title-customer">
-            <h5 class="fs-md text-blue">{enumConfigCustomer.CUSTOMER_NAME}</h5>
+          <div class="d-flex jc-between title">
+            <h5 class="fs-md text-blue">{enumConfigCustomer.TITLE_NAME}</h5>
             <div class="d-flex flex-column">
               <div class="date-pagination"></div>
               <dv-decoration-2 class="dv-dec-2"

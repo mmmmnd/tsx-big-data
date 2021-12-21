@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 16:38:44
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 15:25:48
+ * @LastEditTime: 2021-12-21 16:49:07
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -87,8 +87,8 @@ export default defineComponent({
     return () => (
       <>
         <dv-border-box-12 class="p-4">
-          <div class="d-flex title-customer">
-            <h5 class="fs-md text-blue">{enumConfigAccount.ACCOUNT_NAME}</h5>
+          <div class="d-flex title">
+            <h5 class="fs-md text-blue">{enumConfigAccount.TITLE_NAME}</h5>
           </div>
           <div class="d-flex">
             <div class="d-flex flex-nowrap info-wrapper">

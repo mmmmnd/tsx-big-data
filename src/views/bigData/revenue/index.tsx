@@ -56,7 +56,7 @@ export default defineComponent({
     return () => (
       <>
         <dv-border-box-9 class="p-4">
-          <h5 class="fs-md text-blue title-revenue">{enumConfigRevenue.MONTHLY_REVENUE_NAME}</h5>
+          <h5 class="fs-md text-blue title-revenue">{enumConfigRevenue.TITLE_NAME}</h5>
           <div class="pt-3 d-flex jc-between">
             <v-revenue-chart lines={dataChart.lines}
               xNames={dataChart.xNames}
