@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-22 10:38:29
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 09:33:49
+ * @LastEditTime: 2021-12-24 16:00:46
  */
 import { defineComponent, watch, reactive, shallowReactive } from 'vue'
 import * as echarts from 'echarts'
@@ -34,7 +34,6 @@ const PropsType = {
 } as const
 
 export default defineComponent({
-  name: 'Waves',
   props: PropsType,
   setup(props) {
 

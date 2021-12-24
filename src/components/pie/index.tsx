@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 09:44:43
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:41:38
+ * @LastEditTime: 2021-12-24 15:32:03
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -30,9 +30,19 @@ const PropsType = {
     default: [],
     require: true
   },
+  legendLeft: {
+    type: String,
+    default: "0%",
+    require: true
+  },
   legendTop: {
     type: String,
     default: "0%",
+    require: true
+  },
+  legendOrient: {
+    type: String,
+    default: "horizontal",
     require: true
   },
   seriesPosition: {
@@ -59,8 +69,9 @@ export default defineComponent({
       options = {
         color: colors,
         legend: {
-          orient: 'horizontal',
+          orient: val.legendOrient,
           top: val.legendTop,
+          left: val.legendLeft,
           itemWidth: 16,
           itemHeight: 16,
           textStyle: {

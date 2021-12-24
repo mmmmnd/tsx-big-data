@@ -5,11 +5,11 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 16:52:41
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 09:54:18
+ * @LastEditTime: 2021-12-24 17:48:42
  */
 import { defineComponent, reactive } from 'vue'
 
-import vWaves from "../component/waves";
+import vWaves from "../component/personnelWaves";
 import gDashboard from "@/components/dashboard"
 import gDoubleDealer from "@/components/doubleDealer"
 export default defineComponent({
@@ -18,7 +18,7 @@ export default defineComponent({
     gDashboard,
     gDoubleDealer
   },
-  name: 'Boss',
+  name: 'Personnel',
   setup() {
 
     const dataWaves = reactive([{
