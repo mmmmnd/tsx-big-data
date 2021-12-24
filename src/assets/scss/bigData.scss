@@ -56,7 +56,7 @@
         }
         .dv-dig-flop{
           height: 20px;
-          width: 200px;  
+          width: 400px;  
         }
       }
     }
@@ -101,7 +101,7 @@
     }
     .personnel{
       width: 49%;
-      height: 380px;
+      height: 400px;
       .pie-wrapper{
         position: relative;
         width: 50%;
@@ -121,28 +121,7 @@
     }
     .payment{
       width: 49%;
-      height: 380px;
+      height: 400px;
     }
-  }
-}
-
-.count-wrapper{
-  position: relative;
-  .count-main{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    .dv-dig-flop{
-      height: 30px;
-      width: 200px;
-    }
-  }
-  .count-text{
-    position: absolute;
-    top: 87%;
-    left: 27%;
   }
 }

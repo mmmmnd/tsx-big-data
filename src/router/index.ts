@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-09 18:01:05
+ * @LastEditTime: 2021-12-21 16:51:22
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
     }, {
       path: 'boss',
       name: 'Boss',
-      component: () => import("../views/boss"),
+      component: () => import("../views/boss/index"),
     }]
   }
 ]

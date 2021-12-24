@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 16:52:53
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 16:33:44
+ * @LastEditTime: 2021-12-24 10:07:03
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -25,7 +25,7 @@ export default defineComponent({
   setup() {
 
     const dataPie = reactive({
-      height: "300px",
+      height: "340px",
       width: "480px",
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
@@ -97,7 +97,7 @@ export default defineComponent({
                     number={item.number}
                     fontSize={item.fontSize} />
                 </div>
-                <p class="count-text">{item.name}</p>
+                <p class="text-center count-text">{item.name}</p>
               </div>)}
             </div>
           </div>

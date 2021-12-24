@@ -1,0 +1,28 @@
+#boss{
+  width: 100%;
+  .personnel{
+    width: 100%;
+    .title{
+      position: relative;
+      top: 20px;
+      width: unset !important;
+    }
+    .during-wrapper{
+      width: 50%;
+      .during-info{
+        .during-title{
+          height: 50px;
+          position: relative;
+          top: 30px;
+          .dv-dig-flop{
+            height: 20px;
+            width: 110px;
+          }
+        }
+      }
+    }
+    .average-wrapper{
+      width: 50%;
+    }
+  }
+}

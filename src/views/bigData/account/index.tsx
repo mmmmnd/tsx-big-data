@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 16:38:44
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 16:49:07
+ * @LastEditTime: 2021-12-24 10:08:43
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -26,7 +26,7 @@ export default defineComponent({
   setup() {
 
     const dataPie = reactive({
-      height: "300px",
+      height: "340px",
       width: "480px",
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],

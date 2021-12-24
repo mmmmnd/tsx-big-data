@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 14:47:17
+ * @LastEditTime: 2021-12-22 09:33:03
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigRevenue } from "@/config/enum";
@@ -50,7 +50,7 @@ export default defineComponent({
     })
 
     setTimeout(() => {
-      dataChart.number = [9999999]
+      dataChart.number = [999999999999999999]
     }, 1000)
 
     return () => (

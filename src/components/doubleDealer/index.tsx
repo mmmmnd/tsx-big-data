@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 10:35:23
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 09:05:54
+ * @LastEditTime: 2021-12-22 09:41:01
  */
 import { defineComponent, computed } from 'vue'
 
@@ -17,6 +17,10 @@ const PropsType = {
   fontSize: {
     type: Number,
     default: 20
+  },
+  textAlign: {
+    type: String,
+    default: "center",
   },
   content: {
     type: String,
@@ -33,6 +37,7 @@ export default defineComponent({
       return {
         number: props.number,
         style: { fontSize: props.fontSize },
+        textAlign: props.textAlign,
         content: props.content
       }
     })
