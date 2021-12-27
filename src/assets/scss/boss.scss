@@ -1,12 +1,12 @@
 #boss{
   width: 100%;
+  .title{
+    position: relative;
+    top: 20px;
+    width: unset !important;
+  }
   .personnel{
     width: 100%;
-    .title{
-      position: relative;
-      top: 20px;
-      width: unset !important;
-    }
     .during-wrapper{
       width: 50%;
       .during-info{

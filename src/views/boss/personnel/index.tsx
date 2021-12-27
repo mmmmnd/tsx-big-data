@@ -5,13 +5,14 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 16:52:41
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 17:48:42
+ * @LastEditTime: 2021-12-27 10:32:58
  */
 import { defineComponent, reactive } from 'vue'
-
+import { enumConfigBossPersonnel } from "@/config/enum";
 import vWaves from "../component/personnelWaves";
 import gDashboard from "@/components/dashboard"
 import gDoubleDealer from "@/components/doubleDealer"
+
 export default defineComponent({
   components: {
     vWaves,
@@ -90,7 +91,7 @@ export default defineComponent({
       <>
         <dv-border-box-12>
           <div class="d-flex jc-center title">
-            <h5 class="fs-md text-blue">当月人员流动指标</h5>
+            <h5 class="fs-md text-blue">{enumConfigBossPersonnel.TITLE_NAME}</h5>
           </div>
           <div class="d-flex jc-between">
             <div class="d-flex during-wrapper">

@@ -5,9 +5,10 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 10:40:24
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 17:48:59
+ * @LastEditTime: 2021-12-27 10:33:51
  */
 import { defineComponent, reactive } from 'vue';
+import { enumConfigEducation } from "@/config/enum";
 import gPie from "@/components/pie"
 import gDoubleDealer from "@/components/doubleDealer"
 
@@ -37,7 +38,7 @@ export default defineComponent({
     }])
 
     const dataPie = reactive({
-      height: "400px",
+      height: "360px",
       width: "790px",
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
@@ -105,6 +106,9 @@ export default defineComponent({
           </div>
           <div class="d-flex education">
             <dv-border-box-6 color={['#00c2ff', '#00c2ff']}>
+              <div class="d-flex title pl-3 pt-3">
+                <h5 class="fs-md text-blue">{enumConfigEducation.TITLE_NAME}</h5>
+              </div>
               <g-pie height={dataPie.height}
                 width={dataPie.width}
                 data={dataPie.data}

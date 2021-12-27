@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 16:48:42
+ * @LastEditTime: 2021-12-27 10:33:56
  */
 export enum enumConfigCustomer {
   TITLE_NAME = "客户信息",
@@ -37,4 +37,16 @@ export enum enumConfigPersonnel {
 
 export enum enumConfigPayment {
   TITLE_NAME = "薪酬信息"
+}
+
+export enum enumConfigBossPersonnel {
+  TITLE_NAME = "当月人员流动指标"
+}
+
+export enum enumConfigSalary {
+  TITLE_NAME = "职级分布"
+}
+
+export enum enumConfigEducation {
+  TITLE_NAME = "学历分布"
 }

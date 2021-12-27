@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 15:59:30
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 17:37:00
+ * @LastEditTime: 2021-12-27 09:59:53
  */
 import { defineComponent, watch, reactive, shallowReactive } from 'vue'
 
@@ -28,7 +28,7 @@ export default defineComponent({
   setup(props) {
 
     const config = reactive({
-      height: "400px",
+      height: "380px",
       width: "700px",
       colors: ['#0278e6', '#34d160', '#fcdf39', '#f19611', '#00c6ff', '#f76363']
     })
