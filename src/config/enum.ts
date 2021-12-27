@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-27 10:33:56
+ * @LastEditTime: 2021-12-27 15:53:32
  */
 export enum enumConfigCustomer {
   TITLE_NAME = "客户信息",
@@ -21,12 +21,14 @@ export enum enumConfigRevenue {
 
 export enum enumConfigSpending {
   TITLE_NAME = "支出统计",
+  DIG_TITLE_NAME = "当月支出数据",
   STROKE_COUNT_NAME = "笔数",
   LAST_MONTH_NAME = "同比上月"
 }
 
 export enum enumConfigAccount {
   TITLE_NAME = "到账统计",
+  DIG_TITLE_NAME = "当月到账数据",
   STROKE_COUNT_NAME = "笔数",
   LAST_MONTH_NAME = "同比上月"
 }

@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 14:46:34
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:18:35
+ * @LastEditTime: 2021-12-27 15:37:59
  */
 import { defineComponent } from 'vue'
 
@@ -31,7 +31,7 @@ export default defineComponent({
       headerBGC: "transparent",
       oddRowBGC: "transparent",
       evenRowBGC: "transparent",
-      columnWidth: [700],
+      columnWidth: [650],
       align: ['center']
     }
 
