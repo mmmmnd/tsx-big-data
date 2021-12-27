@@ -43,7 +43,7 @@ export enum enumConfigBossPersonnel {
   TITLE_NAME = "当月人员流动指标"
 }
 
-export enum enumConfigSalary {
+export enum enumConfigrank {
   TITLE_NAME = "职级分布"
 }
 

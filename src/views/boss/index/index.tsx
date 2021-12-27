@@ -5,19 +5,19 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 10:44:34
+ * @LastEditTime: 2021-12-27 10:40:26
  */
 import "@/assets/scss/boss.scss";
 import { defineComponent } from 'vue'
 import vPersonnel from "../personnel";
 import vEducation from "../education";
-import vSalary from "../salary";
+import vRank from "../rank";
 
 export default defineComponent({
   components: {
     vPersonnel,
     vEducation,
-    vSalary
+    vRank
   },
   name: 'Boss',
   setup() {
@@ -35,8 +35,8 @@ export default defineComponent({
             <div class="d-flex jc-start education">
               <v-education />
             </div>
-            <div class="d-flex jc-end salary">
-              <v-salary />
+            <div class="d-flex jc-end rank">
+              <v-rank />
             </div>
           </div>
 
