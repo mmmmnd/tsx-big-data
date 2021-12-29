@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-28 09:20:22
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-29 15:34:19
+ * @LastEditTime: 2021-12-29 17:51:46
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigAge } from "@/config/enum";
@@ -79,9 +79,11 @@ export default defineComponent({
 
     return () => (
       <>
-        <dv-border-box-5 color={['#00c2ff', '#00c2ff']}
-          class="dv-dor-5">
-          <div class="d-flex title pl-3 pt-3">
+        <dv-border-box-4 color={['#00c2ff', '#00c2ff']}
+          reverse={true}>
+          <dv-decoration-2 class="dv-dec-2"
+            color={['#00c2ff', '#00c2ff']} />
+          <div class="d-flex title pl-3">
             <h5 class="fs-md text-blue">{enumConfigAge.TITLE_NAME}</h5>
           </div>
           <div class="d-flex mt-5">
@@ -118,7 +120,7 @@ export default defineComponent({
 
           </div>
 
-        </dv-border-box-5>
+        </dv-border-box-4>
       </>
     );
   }

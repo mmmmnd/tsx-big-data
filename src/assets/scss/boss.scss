@@ -54,11 +54,23 @@
       .dv-dig-flop{
         height: 30px;
         width: 400px;
+        &.dv-dig-title{
+          position: relative;
+          top: -40px;
+        }
       }
     }
   }
   .rank{
     height: 400px;
+    .dv-dec-2{
+      width: 355px;
+      height: 50px;
+      transform: rotate(90deg);
+      position: absolute;
+      top: 185px;
+      right: -176px;
+    }
   }
   .age{
     height: 470px;
@@ -68,8 +80,19 @@
         width: 100px;
       }
     }
+    .dv-dec-2{
+      width:450px;
+      height:50px;
+      transform: rotate(90deg);
+      position: absolute;
+      top: 200px;
+      left: -220px;
+    }
   }
   .salary{
     height: 470px;
+    .title{
+      margin-left: 45px;
+    }
   }
 }

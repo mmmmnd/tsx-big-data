@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 15:59:30
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-29 15:31:47
+ * @LastEditTime: 2021-12-29 18:29:38
  */
 import { defineComponent, watch, reactive, shallowReactive } from 'vue'
 
@@ -41,13 +41,10 @@ export default defineComponent({
       colors: ['#0278e6', '#34d160', '#fcdf39', '#f19611', '#00c6ff', '#f76363']
     })
 
-    let options = shallowReactive({ grid: null, tooltip: null, legend: null, xAxis: null, yAxis: null, series: null, })
+    let options = shallowReactive({ tooltip: null, legend: null, xAxis: null, yAxis: null, series: null, })
 
     watch(() => props, (val) => {
       options = {
-        grid: {
-          right: "20%"
-        },
         tooltip: {
           textStyle: {
             color: "#fff",

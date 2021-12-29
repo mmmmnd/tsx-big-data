@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 10:40:24
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-27 15:55:54
+ * @LastEditTime: 2021-12-29 17:50:15
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigEducation } from "@/config/enum";
@@ -23,7 +23,7 @@ export default defineComponent({
     const dataDoubleDealer = reactive([{
       number: [0],
       fontSize: 30,
-      name: "在职人员统计",
+      name: "在职人员总计",
       textAlign: "center"
     }, {
       number: [0],
@@ -77,16 +77,17 @@ export default defineComponent({
       <>
         <div class="d-flex">
           <div class="personnel-wrapper">
-            <dv-border-box-5 reverse={true}
+            <dv-border-box-11 reverse={true}
               color={['#00c2ff', '#00c2ff']}>
+
               <div class="d-flex flex-column jc-evenly h-100">
                 {dataDoubleDealer.map((item, index) => index == 0 ?
-                  <div class="d-flex flex-column ai-center ">
-                    <g-double-dealer class="dv-dig-flop"
+                  <div class="d-flex flex-column ai-center">
+                    <g-double-dealer class="dv-dig-flop dv-dig-title"
                       number={item.number}
                       fontSize={item.fontSize}
                       textAlign={item.textAlign} />
-                    <h4>{item.name}</h4>
+                    <h2>{item.name}</h2>
                   </div> :
                   <div class="d-flex jc-between ai-center">
                     <div class="mx-5">
@@ -102,10 +103,10 @@ export default defineComponent({
                   </div>)}
               </div>
 
-            </dv-border-box-5>
+            </dv-border-box-11>
           </div>
           <div class="d-flex education">
-            <dv-border-box-6 color={['#00c2ff', '#00c2ff']}>
+            <dv-border-box-5 color={['#00c2ff', '#00c2ff']}>
               <div class="d-flex title pl-3 pt-3">
                 <h5 class="fs-md text-blue">{enumConfigEducation.TITLE_NAME}</h5>
               </div>
@@ -118,7 +119,7 @@ export default defineComponent({
                 legendOrient={dataPie.legendOrient}
                 seriesRadius={dataPie.seriesRadius}
                 seriesPosition={dataPie.seriesPosition} />
-            </dv-border-box-6>
+            </dv-border-box-5>
           </div>
         </div>
       </>
