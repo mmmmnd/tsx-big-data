@@ -5,12 +5,22 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 15:59:30
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-27 09:59:53
+ * @LastEditTime: 2021-12-29 15:31:47
  */
 import { defineComponent, watch, reactive, shallowReactive } from 'vue'
 
 // 定义类型
 const PropsType = {
+  height: {
+    type: String,
+    default: "380px",
+    require: true
+  },
+  width: {
+    type: String,
+    default: "680px",
+    require: true
+  },
   data: {
     type: Array,
     default: [],
@@ -28,16 +38,16 @@ export default defineComponent({
   setup(props) {
 
     const config = reactive({
-      height: "380px",
-      width: "700px",
       colors: ['#0278e6', '#34d160', '#fcdf39', '#f19611', '#00c6ff', '#f76363']
     })
 
-    let options = shallowReactive({ barWidth: null, tooltip: null, legend: null, xAxis: null, yAxis: null, series: null, })
+    let options = shallowReactive({ grid: null, tooltip: null, legend: null, xAxis: null, yAxis: null, series: null, })
 
     watch(() => props, (val) => {
       options = {
-        barWidth: 15,
+        grid: {
+          right: "20%"
+        },
         tooltip: {
           textStyle: {
             color: "#fff",
@@ -56,9 +66,16 @@ export default defineComponent({
         xAxis: {
           type: 'value',
           splitLine: {
+            show: false,
             lineStyle: {
               color: "#ffffff",
               type: 'dashed'
+            }
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: '#FFFFFF'
             }
           },
           axisTick: {
@@ -82,7 +99,7 @@ export default defineComponent({
           },
           axisLine: {
             lineStyle: {
-              color: '#2c4054'
+              color: '#ffffff'
             }
           },
           axisLabel: {
@@ -99,9 +116,8 @@ export default defineComponent({
           label: {
             show: true,
             position: 'right',
-            color: '#A7D6F4',
-            fontSize: 14,
-            distance: 15,
+            color: '#fff',
+            fontSize: 16,
           },
           itemStyle: {
             normal: {
@@ -121,7 +137,7 @@ export default defineComponent({
     )
 
     return () => {
-      return <echart options={options} height={config.height} width={config.width} />
+      return <echart options={options} height={props.height} width={props.width} />
     }
   }
 })

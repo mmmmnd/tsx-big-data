@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-27 15:53:32
+ * @LastEditTime: 2021-12-29 15:34:45
  */
 export enum enumConfigCustomer {
   TITLE_NAME = "客户信息",
@@ -51,4 +51,13 @@ export enum enumConfigrank {
 
 export enum enumConfigEducation {
   TITLE_NAME = "学历分布"
+}
+
+export enum enumConfigAge {
+  TITLE_NAME = "年龄、司龄分布",
+  AGE_NAME = "平均年龄",
+  WORKING_AGE_NAME = "平均司龄"
+}
+export enum enumConfigSalary {
+  TITLE_NAME = "薪资结构",
 }
