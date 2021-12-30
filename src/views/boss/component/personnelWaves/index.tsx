@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-22 10:38:29
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 16:00:46
+ * @LastEditTime: 2021-12-30 09:55:11
  */
 import { defineComponent, watch, reactive, shallowReactive } from 'vue'
 import * as echarts from 'echarts'
@@ -193,7 +193,6 @@ export default defineComponent({
         deep: true
       }
     )
-
 
     return () => {
       return <echart options={options} height={props.height} width={props.width} />

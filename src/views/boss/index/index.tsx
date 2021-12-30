@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-29 17:00:42
+ * @LastEditTime: 2021-12-30 09:22:03
  */
 import "@/assets/scss/boss.scss";
 import { defineComponent } from 'vue'
@@ -16,6 +16,9 @@ import vEducation from "../education";
 import vRank from "../rank";
 import vAge from "../age";
 import vSalary from "../salary";
+import vProportion from "../proportion";
+import vAverageSalary from "../averageSalary";
+
 
 export default defineComponent({
   components: {
@@ -25,7 +28,9 @@ export default defineComponent({
     vEducation,
     vRank,
     vAge,
-    vSalary
+    vSalary,
+    vProportion,
+    vAverageSalary
   },
   name: 'Boss',
   setup() {
@@ -63,6 +68,15 @@ export default defineComponent({
             </div>
             <div class="d-flex salary">
               <v-salary />
+            </div>
+          </div>
+
+          <div class="d-flex jc-between item-box">
+            <div class="d-flex proportion">
+              <v-proportion />
+            </div>
+            <div class="d-flex average-salary">
+              <v-average-salary />
             </div>
           </div>
 

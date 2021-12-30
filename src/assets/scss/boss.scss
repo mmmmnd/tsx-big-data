@@ -65,11 +65,11 @@
     height: 400px;
     .dv-dec-2{
       width: 355px;
-      height: 50px;
+      height: 5px;
       transform: rotate(90deg);
       position: absolute;
-      top: 185px;
-      right: -176px;
+      top: 205px;
+      right: -168px;
     }
   }
   .age{
@@ -93,6 +93,28 @@
     height: 470px;
     .title{
       margin-left: 45px;
+    }
+  }
+  .proportion{
+    .dv-border-box-9{
+      width: 930px;
+      .title{
+        top: -15px;
+      }
+      .table-wrapper{
+        height: 330px;
+      }
+    }
+  }
+  .average-salary{
+    .dv-border-box-9{
+      width: 930px;
+      .title{
+        top: -15px;
+      }
+      .table-wrapper{
+        height: 330px;
+      }
     }
   }
 }
