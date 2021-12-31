@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-31 08:57:26
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-31 15:29:17
+ * @LastEditTime: 2021-12-31 15:33:00
  */
 import { defineComponent, watch, ref, shallowReactive } from 'vue'
 
@@ -160,13 +160,16 @@ export default defineComponent({
     const poll = (startValue = 0, endValue = 7) => {
       const index = props.data as any;
 
-      setInterval(() => {
-        endValue >= index.length
-          ? chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue = 0, endValue: endValue = 7 })
-          : chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue += 7, endValue: endValue += 7 });
+      if (chartRef.value) {
+        setInterval(() => {
+          endValue >= index.length
+            ? chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue = 0, endValue: endValue = 7 })
+            : chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue += 7, endValue: endValue += 7 });
 
-        chartRef.value.initChart({ tooltip });
-      }, 5000)
+          chartRef.value.initChart({ tooltip });
+        }, 5000)
+      }
+
     }
 
     // 启动轮询

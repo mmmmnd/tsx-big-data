@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 09:44:43
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 15:32:03
+ * @LastEditTime: 2021-12-31 15:34:08
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -32,7 +32,7 @@ const PropsType = {
   },
   legendLeft: {
     type: String,
-    default: "0%",
+    default: "center",
     require: true
   },
   legendTop: {
