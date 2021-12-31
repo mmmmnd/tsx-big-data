@@ -10,7 +10,7 @@
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
 import gPie from "@/components/pie"
-import { enumConfigaverageSalary } from "@/config/enum";
+import { enumConfigAverageSalary } from "@/config/enum";
 import gTableSwiper from "@/components/tableSwiper"
 
 export default defineComponent({
@@ -56,7 +56,7 @@ export default defineComponent({
           <dv-border-box-9 class="p-4"
             color={['#00c2ff', '#00c2ff']}>
             <div class="d-flex title pt-3">
-              <h5 class="fs-md text-blue">{enumConfigaverageSalary.TITLE_NAME}</h5>
+              <h5 class="fs-md text-blue">{enumConfigAverageSalary.TITLE_NAME}</h5>
             </div>
             <div class="table-wrapper">
               <g-pie height={dataPie.height}

@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-30 09:22:03
+ * @LastEditTime: 2021-12-31 08:55:25
  */
 import "@/assets/scss/boss.scss";
 import { defineComponent } from 'vue'
@@ -18,7 +18,7 @@ import vAge from "../age";
 import vSalary from "../salary";
 import vProportion from "../proportion";
 import vAverageSalary from "../averageSalary";
-
+import vAnnualSalary from "../annualSalary";
 
 export default defineComponent({
   components: {
@@ -30,7 +30,8 @@ export default defineComponent({
     vAge,
     vSalary,
     vProportion,
-    vAverageSalary
+    vAverageSalary,
+    vAnnualSalary
   },
   name: 'Boss',
   setup() {
@@ -77,6 +78,12 @@ export default defineComponent({
             </div>
             <div class="d-flex average-salary">
               <v-average-salary />
+            </div>
+          </div>
+
+          <div class="d-flex item-box">
+            <div class="d-flex annualSalary">
+              <v-annualSalary />
             </div>
           </div>
 

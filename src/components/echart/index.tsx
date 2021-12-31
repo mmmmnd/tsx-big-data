@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-16 16:49:50
+ * @LastEditTime: 2021-12-31 10:32:22
  */
 import { defineComponent, onMounted, ref, watch, onBeforeUnmount } from 'vue'
 import '@/assets/echart/map/fujian.js'
@@ -62,6 +62,14 @@ export default defineComponent({
       }
     }
 
+    /**
+     * 设置DispatchAction
+     * @param obj 配置
+     */
+    const setDispatchAction = (obj) => {
+      chart.value.dispatchAction(obj);
+    }
+
     // 生命周期
     onMounted(() => {
       // 定义实例
@@ -85,7 +93,8 @@ export default defineComponent({
     // 对外暴露接口
     expose({
       chartRef,
-      initChart
+      initChart,
+      setDispatchAction
     });
 
     return () => {
