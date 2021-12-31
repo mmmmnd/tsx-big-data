@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-31 08:57:26
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-31 10:57:00
+ * @LastEditTime: 2021-12-31 15:29:17
  */
 import { defineComponent, watch, ref, shallowReactive } from 'vue'
 
@@ -44,10 +44,7 @@ export default defineComponent({
 
     const chartRef = ref()
 
-    let timer = null
-
     let options = shallowReactive({ grid: null, tooltip: null, legend: null, xAxis: null, yAxis: null, series: null, dataZoom: null, })
-
 
     const tooltip = {
       show: true,
@@ -161,17 +158,14 @@ export default defineComponent({
 
     // 轮询
     const poll = (startValue = 0, endValue = 7) => {
-      timer = setInterval(() => {
-        // 如果是最后一个？
-        if (endValue >= 8) {
-          // 还原
-          chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue = 0, endValue: endValue = 7 })
-        } else {
-          // 轮播
-          chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue += 7, endValue: endValue += 7 })
-        }
+      const index = props.data as any;
 
-        chartRef.value.initChart({ tooltip })
+      setInterval(() => {
+        endValue >= index.length
+          ? chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue = 0, endValue: endValue = 7 })
+          : chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue += 7, endValue: endValue += 7 });
+
+        chartRef.value.initChart({ tooltip });
       }, 5000)
     }
 

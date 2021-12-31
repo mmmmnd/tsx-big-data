@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-29 15:47:02
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-30 18:13:35
+ * @LastEditTime: 2021-12-31 15:02:44
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -67,6 +67,8 @@ export default defineComponent({
                 legendLeft={dataPie.legendLeft}
                 seriesRadius={dataPie.seriesRadius}
                 seriesPosition={dataPie.seriesPosition} />
+              <dv-decoration-3 class="dv-dec-3"
+                color={['transparent', '#00c2ff',]} />
             </div>
           </dv-border-box-9>
         </div>

@@ -9,6 +9,7 @@
     width: 100%;
     .during-wrapper{
       width: 50%;
+      position: relative;
       .during-info{
         .during-title{
           height: 50px;
@@ -19,6 +20,12 @@
             width: 110px;
           }
         }
+      }
+      .dv-dec-3 {
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        bottom: 30px;
       }
     }
     .average-wrapper{
@@ -59,6 +66,23 @@
           top: -40px;
         }
       }
+      .sex-info{
+        position: relative;
+        .dv-dec-1{
+          height: 20px;
+          width: 300px;
+          position: absolute;
+          top: 40px;
+          right: -15px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .dv-dec-3{
+      width: 90%;
+      height: 10px;
+      position: absolute;
+      bottom: 40px;
     }
   }
   .rank{
@@ -73,7 +97,7 @@
     }
   }
   .age{
-    height: 470px;
+    height: 500px;
     .age-title{
       .dv-dig-flop{
         height: 20px;
@@ -81,16 +105,25 @@
       }
     }
     .dv-dec-2{
-      width:450px;
-      height:50px;
+      width: 470px;
+      height: 10px;
       transform: rotate(90deg);
       position: absolute;
-      top: 200px;
-      left: -220px;
+      top: 230px;
+      left: -230px;
+    }
+    .age-wrapper{
+      position: relative;
+      .dv-dec-3{
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        bottom: 20px;
+      }
     }
   }
   .salary{
-    height: 470px;
+    height: 500px;
     .title{
       margin-left: 45px;
     }
@@ -103,8 +136,19 @@
       }
       .table-wrapper{
         height: 330px;
+        position: relative;
+        .dv-dec-3{
+          width: 70%;
+          height: 20px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
       }
     }
+
   }
   .average-salary{
     .dv-border-box-9{

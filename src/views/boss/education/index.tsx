@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 10:40:24
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-29 17:50:15
+ * @LastEditTime: 2021-12-31 14:41:49
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigEducation } from "@/config/enum";
@@ -89,7 +89,7 @@ export default defineComponent({
                       textAlign={item.textAlign} />
                     <h2>{item.name}</h2>
                   </div> :
-                  <div class="d-flex jc-between ai-center">
+                  <div class="d-flex jc-between ai-center sex-info">
                     <div class="mx-5">
                       <svg-icon name={item.name}
                         size={60}
@@ -100,6 +100,8 @@ export default defineComponent({
                       number={item.number}
                       fontSize={item.fontSize}
                       textAlign={item.textAlign} />
+                    <dv-decoration-1 class="dv-dec-1"
+                      color={['transparent', '#00c2ff',]} />
                   </div>)}
               </div>
 
@@ -119,6 +121,8 @@ export default defineComponent({
                 legendOrient={dataPie.legendOrient}
                 seriesRadius={dataPie.seriesRadius}
                 seriesPosition={dataPie.seriesPosition} />
+              <dv-decoration-3 class="dv-dec-3"
+                color={['transparent', '#00c2ff',]} />
             </dv-border-box-5>
           </div>
         </div>

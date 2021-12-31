@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-28 09:20:22
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-29 17:51:46
+ * @LastEditTime: 2021-12-31 14:38:19
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigAge } from "@/config/enum";
@@ -86,7 +86,7 @@ export default defineComponent({
           <div class="d-flex title pl-3">
             <h5 class="fs-md text-blue">{enumConfigAge.TITLE_NAME}</h5>
           </div>
-          <div class="d-flex mt-5">
+          <div class="d-flex mt-5 age-wrapper">
             <div class="d-flex flex-column ai-center">
               <div class="d-flex age-title">
                 <h3>{enumConfigAge.AGE_NAME}：</h3>
@@ -117,7 +117,8 @@ export default defineComponent({
                 seriesRadius={dataPie.seriesRadius}
                 seriesPosition={dataPie.seriesPosition} />
             </div>
-
+            <dv-decoration-3 class="dv-dec-3"
+              color={['#00c2ff', 'transparent',]} />
           </div>
 
         </dv-border-box-4>

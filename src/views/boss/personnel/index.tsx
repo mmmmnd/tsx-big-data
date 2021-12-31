@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 16:52:41
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-27 10:32:58
+ * @LastEditTime: 2021-12-31 14:37:59
  */
 import { defineComponent, reactive } from 'vue'
 import { enumConfigBossPersonnel } from "@/config/enum";
@@ -119,6 +119,8 @@ export default defineComponent({
                 </div>)}
 
               </div>
+              <dv-decoration-3 class="dv-dec-3"
+                color={['transparent', '#00c2ff',]} />
             </div>
             <div class="d-flex flex-wrap average-wrapper">
               {dataDoubleDealer.map(item =>
