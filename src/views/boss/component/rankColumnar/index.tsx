@@ -58,7 +58,6 @@ export default defineComponent({
             color: "#fff",
             fontSize: 16
           },
-          data: val.data,
         },
         xAxis: {
           type: 'value',

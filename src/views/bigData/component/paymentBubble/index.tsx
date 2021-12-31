@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 09:33:05
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 11:13:47
+ * @LastEditTime: 2021-12-30 18:20:32
  */
 import { defineComponent, ref, reactive, watch, shallowReactive } from 'vue'
 
@@ -242,7 +242,7 @@ export default defineComponent({
     )
 
     setInterval(function () {
-      chartRef.value.initChart({
+      chartRef.value && chartRef.value.initChart({
         graphic: [{
           id: 'logo',
           rotation: -(config.rotation += Math.PI / 860) % (Math.PI * 2),

@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 11:33:15
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-20 16:21:12
+ * @LastEditTime: 2021-12-30 18:20:34
  */
 import { defineComponent, ref, watch, shallowReactive } from 'vue'
 
@@ -234,7 +234,7 @@ export default defineComponent({
     function startTimer() {
       setInterval(() => {
         angle += 3
-        chartRef.value.initChart(options)
+        chartRef.value && chartRef.value.initChart(options)
       }, 20);
     }
 
