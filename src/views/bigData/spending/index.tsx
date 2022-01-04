@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 16:38:44
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 10:08:29
+ * @LastEditTime: 2022-01-04 10:13:24
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -31,6 +31,9 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
       legendTop: "0%",
+      content: "{nt}% ↑",
+      fontSize: 30,
+      number: [0],
       lines: ["工资付款", "其他付款", "转账"],
       data: [{
         name: '工资付款',
@@ -42,12 +45,6 @@ export default defineComponent({
         name: '转账',
         value: 2789
       }]
-    })
-
-    const dataDoubleDealer = reactive({
-      number: [0],
-      fontSize: 30,
-      content: "{nt}% ↑"
     })
 
     const dataDashboard = reactive({
@@ -72,7 +69,7 @@ export default defineComponent({
     })
 
     setTimeout(() => {
-      dataDoubleDealer.number = [1167]
+      dataPie.number = [1167]
     }, 1000)
 
     return () => (
@@ -99,15 +96,15 @@ export default defineComponent({
                   <div class="d-flex flex-column jc-center ai-center count-main">
                     <p class="fs-xl">{enumConfigSpending.STROKE_COUNT_NAME}</p>
                     <g-double-dealer class="mt-4 dv-dig-flop"
-                      number={dataDoubleDealer.number}
-                      fontSize={dataDoubleDealer.fontSize} />
+                      number={dataPie.number}
+                      fontSize={dataPie.fontSize} />
                   </div>
                 </div>
                 <div class="d-flex flex-column ai-center month-wrapper">
                   <g-double-dealer class="dv-dig-flop"
-                    content={dataDoubleDealer.content}
-                    number={dataDoubleDealer.number}
-                    fontSize={dataDoubleDealer.fontSize} />
+                    content={dataPie.content}
+                    number={dataPie.number}
+                    fontSize={dataPie.fontSize} />
                   <p class="fs-xl mt-4">{enumConfigSpending.LAST_MONTH_NAME}</p>
                   <dv-decoration-1 class="dv-dec-1"
                     color={['transparent', '#00c2ff',]} />

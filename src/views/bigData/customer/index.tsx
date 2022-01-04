@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 11:58:36
+ * @LastEditTime: 2022-01-04 09:54:46
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive, ref } from 'vue'
@@ -28,41 +28,39 @@ export default defineComponent({
   name: 'Customer',
   setup() {
 
-    const dataChart = reactive(
-      [
-        {
-          lines: ["结算单位", "协议单位"],
-          xNames: ["2021", "2020", "2019", "2018"],
-          lists: [[67, 97, 51, 38], [94, 23, 43, 18]]
-        }, {
-          lines: ["结算单位", "协议单位"],
-          xNames: ["第一季度", "第二季度", "第三季度", "第四季度"],
-          lists: [[67, 97, 51, 38], [94, 23, 43, 18]]
-        },
-        {
-          lines: ["结算单位", "协议单位"],
-          xNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
-          lists: [
-            [67, 97, 51, 38, 67, 97, 51, 38, 94, 23, 43, 18],
-            [94, 23, 43, 18, 97, 51, 38, 67, 67, 97, 51, 38]
-          ]
-        }
-      ]
-    )
-
-    const navCustomer = reactive([{
-      name: enumConfigCustomer.YEARS_NAME,
-      number: [0],
-      fontSize: 20,
-    }, {
-      name: enumConfigCustomer.QUARTER_NAME,
-      number: [0],
-      fontSize: 20,
-    }, {
-      name: enumConfigCustomer.MONTH_NAME,
-      number: [0],
-      fontSize: 20,
-    }])
+    const dataChart = reactive([
+      {
+        name: "当年单位新增",
+        number: [0],
+        fontSize: 20,
+        lines: ["结算单位", "协议单位"],
+        xNames: ["2021", "2020", "2019", "2018"],
+        lists: [
+          [67, 97, 51, 38],
+          [94, 23, 43, 18]
+        ]
+      }, {
+        name: "当季度单位新增",
+        number: [0],
+        fontSize: 20,
+        lines: ["结算单位", "协议单位"],
+        xNames: ["第一季度", "第二季度", "第三季度", "第四季度"],
+        lists: [
+          [67, 97, 51, 38],
+          [94, 23, 43, 18]
+        ]
+      }, {
+        name: "当月单位新增",
+        number: [0],
+        fontSize: 20,
+        lines: ["结算单位", "协议单位"],
+        xNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+        lists: [
+          [67, 97, 51, 38, 67, 97, 51, 38, 94, 23, 43, 18],
+          [94, 23, 43, 18, 97, 51, 38, 67, 67, 97, 51, 38]
+        ]
+      }
+    ])
 
     const thumbsSwiper = ref(null);
 
@@ -90,9 +88,9 @@ export default defineComponent({
     }
 
     setTimeout(() => {
-      navCustomer[0].number = [1167]
-      navCustomer[1].number = [12312]
-      navCustomer[2].number = [11562367]
+      dataChart[0].number = [1167]
+      dataChart[1].number = [12312]
+      dataChart[2].number = [11562367]
     }, 1000)
 
     return () => (
@@ -100,7 +98,7 @@ export default defineComponent({
         <dv-border-box-9 class="p-4">
           <div class="d-flex jc-between title">
             <h5 class="fs-md text-blue">{enumConfigCustomer.TITLE_NAME}</h5>
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column jc-end">
               <div class="date-pagination"></div>
               <dv-decoration-2 class="dv-dec-2"
                 color={['#00c2ff', '#000000']} />
@@ -111,7 +109,7 @@ export default defineComponent({
             watchSlidesProgress={true}
             spaceBetween={10}
             slidesPerView={1}
-            onSwiper={setThumbsSwiper}>{navCustomer.map(item =>
+            onSwiper={setThumbsSwiper}>{dataChart.map(item =>
               <swiper-slide class="swiper-no-swiping">
                 <div class="d-flex flex-column text-center">
                   <g-double-dealer class="mt-2 dv-dig-flop"
@@ -124,7 +122,7 @@ export default defineComponent({
           <swiper spaceBetween={30}
             centeredSlides={true}
             thumbs={swiper_options.thumbs}
-            autoplay={swiper_options.autoplay}
+            // autoplay={swiper_options.autoplay}
             pagination={swiper_options.pagination}
             class="mySwiper"> {dataChart.map(item =>
               <swiper-slide>

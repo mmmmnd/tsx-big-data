@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 09:14:26
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-13 10:54:15
+ * @LastEditTime: 2021-12-31 16:44:48
  */
 import "@/assets/scss/index.scss";
 import {
@@ -21,6 +21,11 @@ import { formatTime } from "@/utils/date";
 import { WEEK, TITLE, ROUTERNAME } from "@/config/index";
 import useDraw from "@/utils/useDraw";
 import gTitle from "@/components/title";
+
+import { ElMessage } from 'element-plus'
+
+
+import { loginApi } from '@/api/login'
 
 export default defineComponent({
   components: {
@@ -78,6 +83,14 @@ export default defineComponent({
         timeInfo.dateWeek = WEEK[date.getDay()];
       }, 1000);
     };
+
+    ElMessage({
+      showClose: true,
+      message: "123123",
+      type: 'warning',
+    })
+
+    // loginApi({}).then(r => console.log(r))
 
     return () => (
       <>

@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 16:38:44
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-24 10:08:43
+ * @LastEditTime: 2022-01-04 10:22:33
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -31,6 +31,9 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
       legendTop: "0%",
+      content: "{nt}% ↑",
+      fontSize: 30,
+      number: [0],
       lines: ["津贴", "减免", "稳岗", "未分类", "工资", "其他"],
       data: [{
         name: '津贴',
@@ -53,11 +56,6 @@ export default defineComponent({
       }]
     })
 
-    const dataDoubleDealer = reactive({
-      number: [0],
-      fontSize: 30,
-      content: "{nt}% ↑"
-    })
 
     const dataDashboard = reactive({
       height: "300px",
@@ -65,7 +63,7 @@ export default defineComponent({
     })
 
     const dataTable = reactive({
-      header: ['申报名称', '实发总额', '发放时间'],
+      header: ['到账单位', '到账总额', '到账时间'],
       data: [
         ['海口市财政国库支付局2021年第十八批海口市引进人才住房补贴人员名单住房补贴结算', '94328', '2021-12-20'],
         ['陵水黎族自治县统计局（代发）2021-12结算申报表', '94327', '2021-12-20'],
@@ -81,7 +79,7 @@ export default defineComponent({
     })
 
     setTimeout(() => {
-      dataDoubleDealer.number = [1167]
+      dataPie.number = [1167]
     }, 1000)
 
     return () => (
@@ -108,15 +106,15 @@ export default defineComponent({
                   <div class="d-flex flex-column jc-center ai-center count-main">
                     <p class="fs-xl">{enumConfigAccount.STROKE_COUNT_NAME}</p>
                     <g-double-dealer class="mt-4 dv-dig-flop"
-                      number={dataDoubleDealer.number}
-                      fontSize={dataDoubleDealer.fontSize} />
+                      number={dataPie.number}
+                      fontSize={dataPie.fontSize} />
                   </div>
                 </div>
                 <div class="d-flex flex-column ai-center month-wrapper">
                   <g-double-dealer class="dv-dig-flop"
-                    content={dataDoubleDealer.content}
-                    number={dataDoubleDealer.number}
-                    fontSize={dataDoubleDealer.fontSize} />
+                    content={dataPie.content}
+                    number={dataPie.number}
+                    fontSize={dataPie.fontSize} />
                   <p class="fs-xl mt-4">{enumConfigAccount.LAST_MONTH_NAME}</p>
                   <dv-decoration-1 class="dv-dec-1"
                     color={['transparent', '#00c2ff',]} />

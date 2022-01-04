@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-22 09:33:03
+ * @LastEditTime: 2022-01-04 10:16:44
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigRevenue } from "@/config/enum";
@@ -29,8 +29,6 @@ export default defineComponent({
         [67, 97, 51, 38, 67, 97, 51, 38, 94, 23, 43, 18],
         [94, 23, 43, 18, 97, 51, 38, 67, 67, 97, 51, 38]
       ],
-      number: [0],
-      fontSize: 20,
     })
 
     const dataPie = reactive({
@@ -39,6 +37,8 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['30%', '50%'],
       legendTop: "5%",
+      fontSize: 20,
+      number: [0],
       lines: ["年收入", "年支出"],
       data: [{
         name: '年收入',
@@ -50,7 +50,7 @@ export default defineComponent({
     })
 
     setTimeout(() => {
-      dataChart.number = [999999999999999999]
+      dataPie.number = [999999999999999999]
     }, 1000)
 
     return () => (
@@ -66,8 +66,8 @@ export default defineComponent({
                 <div class="d-flex number-revenue jc-center">
                   <div class="d-flex flex-column text-center">
                     <g-double-dealer class="mt-2 dv-dig-flop"
-                      number={dataChart.number}
-                      fontSize={dataChart.fontSize} />
+                      number={dataPie.number}
+                      fontSize={dataPie.fontSize} />
                     <p class="mt-1 text-blue">{enumConfigRevenue.ANNUAL_PROFIT_NAME}</p>
                   </div>
                 </div>

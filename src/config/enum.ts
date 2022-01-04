@@ -5,13 +5,10 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-31 11:03:56
+ * @LastEditTime: 2022-01-04 09:55:11
  */
 export enum enumConfigCustomer {
   TITLE_NAME = "客户信息",
-  YEARS_NAME = "当年单位新增",
-  QUARTER_NAME = "当季度单位新增",
-  MONTH_NAME = "当月单位新增"
 }
 
 export enum enumConfigRevenue {
