@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add axios,qs,element-plus
+  C:\Program Files\nodejs\node.exe C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js set version berry
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\20180509\bin;C:\Program Files\Java\jdk-16.0.1\bin;C:\Program Files\Java\jdk-16.0.1\jre\bin;C:\Program Files\nodejs;C:\windows\system32;D:\phpstudy_pro\Extensions\MySQL5.7.26\bin;D:\apache-maven-3.6.1\bin;C:\Users\20180509\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\20180509\AppData\Roaming\npm
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\20180509\bin;C:\Program Files\Java\jdk-16.0.1\bin;C:\Program Files\Java\jdk-16.0.1\jre\bin;C:\Program Files\nodejs;C:\windows\system32;D:\phpstudy_pro\Extensions\MySQL5.7.26\bin;D:\apache-maven-3.6.1\bin;C:\Program Files (x86)\Tencent\微信web开发者工具\dll;C:\Users\20180509\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\20180509\AppData\Roaming\npm
 
 Yarn version: 
   1.22.10
@@ -14,17 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: http://registry.npm.taobao.org/axios,qs,element-plus: Not found
-      at Request.params.callback [as _callback] (C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
-      at Request.self.callback (C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (_stream_readable.js:1201:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  Error: getaddrinfo ENOENT raw.githubusercontent.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
 
 npm manifest: 
   {
@@ -60,8 +51,11 @@ npm manifest:
       "@vue/cli-service": "~4.5.0",
       "@vue/compiler-sfc": "^3.0.0",
       "@vue/eslint-config-typescript": "^7.0.0",
+      "axios": "^0.24.0",
+      "element-plus": "^1.0.2-beta.46",
       "eslint": "^6.7.2",
       "eslint-plugin-vue": "^7.0.0",
+      "qs": "^6.10.2",
       "sass": "^1.26.5",
       "sass-loader": "^8.0.2",
       "typescript": "~4.1.5"
