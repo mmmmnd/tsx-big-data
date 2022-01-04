@@ -5,15 +5,15 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-21 16:51:22
+ * @LastEditTime: 2022-01-04 15:49:54
  */
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Index",
-    redirect: '/bigData',
+    redirect: '/boss',
     component: () => import("../views/index"),
     children: [{
       path: 'bigData',
@@ -28,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
 

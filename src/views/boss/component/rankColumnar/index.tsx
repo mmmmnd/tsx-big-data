@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 15:59:30
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-29 18:29:38
+ * @LastEditTime: 2022-01-04 14:33:34
  */
 import { defineComponent, watch, reactive, shallowReactive } from 'vue'
 
@@ -21,7 +21,7 @@ const PropsType = {
     default: "680px",
     require: true
   },
-  data: {
+  name: {
     type: Array,
     default: [],
     require: true
@@ -86,7 +86,7 @@ export default defineComponent({
         },
         yAxis: {
           type: 'category',
-          data: val.data,
+          data: val.name,
           splitLine: {
             show: false
           },

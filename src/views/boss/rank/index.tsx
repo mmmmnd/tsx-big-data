@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 10:40:49
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-29 17:51:07
+ * @LastEditTime: 2022-01-04 14:32:37
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigrank } from "@/config/enum";
@@ -21,7 +21,7 @@ export default defineComponent({
     const dataColumnar = reactive({
       height: "380px",
       width: "700px",
-      data: ["专业", "主管", "经理"],
+      name: ["专业", "主管", "经理"],
       value: [194, 295, 399]
     })
 
@@ -33,7 +33,7 @@ export default defineComponent({
           </div>
           <v-rank-columnar height={dataColumnar.height}
             width={dataColumnar.width}
-            data={dataColumnar.data}
+            name={dataColumnar.name}
             value={dataColumnar.value} />
           <dv-decoration-2 class="dv-dec-2"
             color={['#00c2ff', '#00c2ff']} />

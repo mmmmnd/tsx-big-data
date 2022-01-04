@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-28 09:20:22
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-31 14:38:19
+ * @LastEditTime: 2022-01-04 14:46:50
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigAge } from "@/config/enum";
@@ -25,9 +25,9 @@ export default defineComponent({
     const dataAgePie = reactive({
       height: "400px",
       width: "585px",
-      number: [0],
       fontSize: 20,
       content: '{nt}岁',
+      number: [0],
       data: [{
         value: 153,
         name: '25岁以下',
@@ -46,13 +46,13 @@ export default defineComponent({
     const dataPie = reactive({
       height: "400px",
       width: "585px",
-      number: [0],
-      fontSize: 20,
-      content: '{nt}年',
       seriesPosition: "outside",
       seriesRadius: ['30%', '50%'],
       legendTop: "5%",
       legendLeft: "15%",
+      fontSize: 20,
+      content: '{nt}年',
+      number: [0],
       lines: ["1年", "2年", "3年", "4年", "5年以上"],
       data: [{
         name: '1年',

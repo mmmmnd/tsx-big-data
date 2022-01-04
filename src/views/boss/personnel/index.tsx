@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 16:52:41
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-31 14:37:59
+ * @LastEditTime: 2022-01-04 11:01:47
  */
 import { defineComponent, reactive } from 'vue'
 import { enumConfigBossPersonnel } from "@/config/enum";
@@ -22,51 +22,55 @@ export default defineComponent({
   name: 'Personnel',
   setup() {
 
-    const dataWaves = reactive([{
-      height: "350px",
-      width: "450px",
-      value: 0.6,
-      number: [0],
-      fontSize: 20,
-      textAlign: "left",
-      title: "当月入住人数",
-      name: "入职率"
-    }, {
-      height: "350px",
-      width: "450px",
-      value: 0.6,
-      number: [0],
-      fontSize: 20,
-      textAlign: "left",
-      title: "当月离职人数",
-      name: "离职率"
-    }])
+    const dataWaves = reactive(
+      [{
+        height: "350px",
+        width: "450px",
+        fontSize: 20,
+        textAlign: "left",
+        title: "当月入住人数",
+        name: "入职率",
+        value: 0.6,
+        number: [0],
+      }, {
+        height: "350px",
+        width: "450px",
+        fontSize: 20,
+        textAlign: "left",
+        title: "当月离职人数",
+        name: "离职率",
+        value: 0.6,
+        number: [0],
+      }]
+    )
 
-    const dataDoubleDealer = reactive([{
-      number: [0],
-      fontSize: 30,
-      name: "入职人员平均司龄"
-    }, {
-      number: [0],
-      fontSize: 30,
-      name: "入职人员平均年龄"
-    }, {
-      number: [0],
-      fontSize: 30,
-      name: "入职人员平均薪资"
-    }, {
-      number: [0],
-      fontSize: 30,
-      name: "离职人员平均司龄"
-    }, {
-      number: [0],
-      fontSize: 30,
-      name: "离职人员平均年龄"
-    }, {
-      number: [0],
-      fontSize: 30,
-      name: "离职人员平均薪资"
-    },])
+    const dataDoubleDealer = reactive(
+      [{
+        number: [0],
+        fontSize: 30,
+        name: "入职人员平均司龄"
+      }, {
+        number: [0],
+        fontSize: 30,
+        name: "入职人员平均年龄"
+      }, {
+        number: [0],
+        fontSize: 30,
+        name: "入职人员平均薪资"
+      }, {
+        number: [0],
+        fontSize: 30,
+        name: "离职人员平均司龄"
+      }, {
+        number: [0],
+        fontSize: 30,
+        name: "离职人员平均年龄"
+      }, {
+        number: [0],
+        fontSize: 30,
+        name: "离职人员平均薪资"
+      }]
+    )
 
     const dataDashboard = reactive({
       height: "200px",
