@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js set version berry
+  C:\Program Files\nodejs\node.exe C:\Users\20180509\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js upgrade --latest
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\20180509\bin;C:\Program Files\Java\jdk-16.0.1\bin;C:\Program Files\Java\jdk-16.0.1\jre\bin;C:\Program Files\nodejs;C:\windows\system32;D:\phpstudy_pro\Extensions\MySQL5.7.26\bin;D:\apache-maven-3.6.1\bin;C:\Program Files (x86)\Tencent\微信web开发者工具\dll;C:\Users\20180509\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\20180509\AppData\Roaming\npm
@@ -14,8 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: getaddrinfo ENOENT raw.githubusercontent.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+  Error: EPERM: operation not permitted, unlink 'C:\Users\20180509\Desktop\qianduan\tsx-big-data\node_modules\element-plus\es\el-aside\index.d.ts'
 
 npm manifest: 
   {
@@ -979,6 +978,11 @@ Lockfile:
       "@babel/helper-validator-identifier" "^7.15.7"
       to-fast-properties "^2.0.0"
   
+  "@element-plus/icons@^0.0.11":
+    version "0.0.11"
+    resolved "https://registry.npmmirror.com/@element-plus/icons/download/@element-plus/icons-0.0.11.tgz#9b187c002774548b911850d17fa5fc2f9a515f57"
+    integrity sha1-mxh8ACd0VIuRGFDRf6X8L5pRX1c=
+  
   "@hapi/address@2.x.x":
     version "2.1.4"
     resolved "https://registry.npmmirror.com/@hapi/address/download/@hapi/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -1100,6 +1104,11 @@ Lockfile:
     dependencies:
       "@nodelib/fs.scandir" "2.1.5"
       fastq "^1.6.0"
+  
+  "@popperjs/core@^2.4.4":
+    version "2.11.2"
+    resolved "https://registry.npmmirror.com/@popperjs/core/download/@popperjs/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
+    integrity sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==
   
   "@soda/friendly-errors-webpack-plugin@^1.7.1":
     version "1.8.1"
@@ -2145,6 +2154,11 @@ Lockfile:
     resolved "https://registry.npm.taobao.org/async-limiter/download/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
     integrity sha1-3TeelPDbgxCwgpH51kwyCXZmF/0=
   
+  async-validator@^3.4.0:
+    version "3.5.2"
+    resolved "https://registry.npmmirror.com/async-validator/download/async-validator-3.5.2.tgz#68e866a96824e8b2694ff7a831c1a25c44d5e500"
+    integrity sha1-aOhmqWgk6LJpT/eoMcGiXETV5QA=
+  
   async@^2.6.2:
     version "2.6.3"
     resolved "https://registry.npmmirror.com/async/download/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
@@ -2189,6 +2203,13 @@ Lockfile:
     version "1.11.0"
     resolved "https://registry.npm.taobao.org/aws4/download/aws4-1.11.0.tgz?cache=0&sync_timestamp=1604101166484&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faws4%2Fdownload%2Faws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
     integrity sha1-1h9G2DslGSUOJ4Ta9bCUeai0HFk=
+  
+  axios@^0.24.0:
+    version "0.24.0"
+    resolved "https://registry.npmmirror.com/axios/download/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
+    integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+    dependencies:
+      follow-redirects "^1.14.4"
   
   babel-code-frame@^6.22.0:
     version "6.26.0"
@@ -3368,6 +3389,11 @@ Lockfile:
     dependencies:
       assert-plus "^1.0.0"
   
+  dayjs@1.x:
+    version "1.10.7"
+    resolved "https://registry.npmmirror.com/dayjs/download/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
+    integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
+  
   debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
     version "2.6.9"
     resolved "https://registry.npmmirror.com/debug/download/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -3732,6 +3758,20 @@ Lockfile:
     version "1.4.7"
     resolved "https://registry.npmmirror.com/electron-to-chromium/download/electron-to-chromium-1.4.7.tgz#58e0b4ec9096ee1422e4d9e83ceeb05b0cf076eb"
     integrity sha512-UPy2MsQw1OdcbxR7fvwWZH/rXcv+V26+uvQVHx0fGa1kqRfydtfOw+NMGAvZJ63hyaH4aEBxbhSEtqbpliSNWA==
+  
+  element-plus@^1.0.2-beta.46:
+    version "1.0.2-beta.71"
+    resolved "https://registry.npmmirror.com/element-plus/download/element-plus-1.0.2-beta.71.tgz#148f16d5a0a800549989f7869bbf4d656c652d36"
+    integrity sha512-tlfbRORIav8gJcIpjZI5F6aJIVHIaDuGO6/vKu43lgYq4JS2JPNRTjvrSE2p4f5xLfaFNfOWjCS3sybXLfMg8g==
+    dependencies:
+      "@element-plus/icons" "^0.0.11"
+      "@popperjs/core" "^2.4.4"
+      async-validator "^3.4.0"
+      dayjs "1.x"
+      lodash "^4.17.20"
+      mitt "^2.1.0"
+      normalize-wheel "^1.0.1"
+      resize-observer-polyfill "^1.5.1"
   
   elliptic@^6.5.3:
     version "6.5.4"
@@ -4401,6 +4441,11 @@ Lockfile:
     version "1.14.5"
     resolved "https://registry.npmmirror.com/follow-redirects/download/follow-redirects-1.14.5.tgz#f09a5848981d3c772b5392309778523f8d85c381"
     integrity sha1-8JpYSJgdPHcrU5Iwl3hSP42Fw4E=
+  
+  follow-redirects@^1.14.4:
+    version "1.14.6"
+    resolved "https://registry.npmmirror.com/follow-redirects/download/follow-redirects-1.14.6.tgz#8cfb281bbc035b3c067d6cd975b0f6ade6e855cd"
+    integrity sha512-fhUl5EwSJbbl8AR+uYL2KQDxLkdSjZGR36xy46AO7cOMTrCMON6Sa28FmAnC2tRTDbd/Uuzz3aJBv7EBN7JH8A==
   
   for-in@^1.0.2:
     version "1.0.2"
@@ -6162,6 +6207,11 @@ Lockfile:
     resolved "https://registry.nlark.com/mitt/download/mitt-1.1.2.tgz?cache=0&sync_timestamp=1624483449786&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmitt%2Fdownload%2Fmitt-1.1.2.tgz#380e61480d6a615b660f07abb60d51e0a4e4bed6"
     integrity sha1-OA5hSA1qYVtmDwertg1R4KTkvtY=
   
+  mitt@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.npmmirror.com/mitt/download/mitt-2.1.0.tgz#f740577c23176c6205b121b2973514eade1b2230"
+    integrity sha512-ILj2TpLiysu2wkBbWjAmww7TkZb65aiQO+DkVdUTBpBXq+MHYiETENkKFMtsJZX1Lf4pe4QOrTSjIfUwN5lRdg==
+  
   mixin-deep@^1.2.0:
     version "1.3.2"
     resolved "https://registry.npm.taobao.org/mixin-deep/download/mixin-deep-1.3.2.tgz#1120b43dc359a785dce65b55b82e257ccf479566"
@@ -6384,6 +6434,11 @@ Lockfile:
     version "3.3.0"
     resolved "https://registry.nlark.com/normalize-url/download/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
     integrity sha1-suHE3E98bVd0PfczpPWXjRhlBVk=
+  
+  normalize-wheel@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.npm.taobao.org/normalize-wheel/download/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
+    integrity sha1-rsiGr/2wRQcNhWRH32Ls+GFG7EU=
   
   npm-run-path@^2.0.0:
     version "2.0.2"
@@ -7423,6 +7478,13 @@ Lockfile:
     resolved "https://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz?cache=0&sync_timestamp=1616385315895&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
     integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
   
+  qs@^6.10.2:
+    version "6.10.2"
+    resolved "https://registry.npmmirror.com/qs/download/qs-6.10.2.tgz#c1431bea37fc5b24c5bdbafa20f16bdf2a4b9ffe"
+    integrity sha512-mSIdjzqznWgfd4pMii7sHtaYF8rx8861hBO80SraY5GT0XQibWZWJSid0avzHGkDIZLImux2S5mXO0Hfct2QCw==
+    dependencies:
+      side-channel "^1.0.4"
+  
   qs@~6.5.2:
     version "6.5.2"
     resolved "https://registry.npm.taobao.org/qs/download/qs-6.5.2.tgz?cache=0&sync_timestamp=1616385315895&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
@@ -7679,6 +7741,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.npm.taobao.org/requires-port/download/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
     integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+  
+  resize-observer-polyfill@^1.5.1:
+    version "1.5.1"
+    resolved "https://registry.npm.taobao.org/resize-observer-polyfill/download/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+    integrity sha1-DpAg3T0hAkRY1OvSfiPkAmmBBGQ=
   
   resolve-cwd@^2.0.0:
     version "2.0.0"

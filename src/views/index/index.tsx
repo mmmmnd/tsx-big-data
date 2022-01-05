@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 09:14:26
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 16:39:28
+ * @LastEditTime: 2022-01-05 09:48:04
  */
 import "@/assets/scss/index.scss";
 import {
@@ -21,8 +21,6 @@ import { formatTime } from "@/utils/date";
 import { WEEK, TITLE, ROUTERNAME } from "@/config/index";
 import useDraw from "@/utils/useDraw";
 import gTitle from "@/components/title";
-
-import { loginApi } from '@/api/login'
 
 export default defineComponent({
   components: {
@@ -81,8 +79,6 @@ export default defineComponent({
       }, 1000);
     };
 
-
-    loginApi({}).then(r => console.log(r))
 
     return () => (
       <>

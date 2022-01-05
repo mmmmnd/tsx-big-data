@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 10:40:24
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-31 14:41:49
+ * @LastEditTime: 2022-01-05 15:30:34
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigEducation } from "@/config/enum";
@@ -45,25 +45,22 @@ export default defineComponent({
       legendLeft: "10%",
       legendTop: "30%",
       legendOrient: "vertical",
-      lines: ["津贴", "减免", "稳岗", "未分类", "工资", "其他"],
+      lines: ["大专以下", "大专", "本科", "硕士", "博士",],
       data: [{
-        name: '津贴',
+        name: '大专以下',
         value: 2363
       }, {
-        name: '减免',
+        name: '大专',
         value: 11344
       }, {
-        name: '稳岗',
+        name: '本科',
         value: 1253
       }, {
-        name: '未分类',
+        name: '硕士',
         value: 4643
       }, {
-        name: '工资',
+        name: '博士',
         value: 7854
-      }, {
-        name: '其他',
-        value: 4534
       }]
     })
 

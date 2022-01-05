@@ -5,18 +5,14 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 16:55:05
+ * @LastEditTime: 2022-01-05 11:34:01
  */
+import { TITLE } from "@/config/index";
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
-const global: Array<RouteRecordRaw> = [
-  { path: '/', redirect: { name: 'login' }, meta: { title_cn: '重定向', title_en: 'Redirect' } },
-  { path: '/login', name: 'login', component: () => import("../views/login"), meta: { title_cn: '登录', title_en: 'Login' } },
-]
-
-const main: Array<RouteRecordRaw> = [
+const routes: Array<RouteRecordRaw> = [
   {
-    path: "/index",
+    path: "/",
     name: "Index",
     redirect: '/boss',
     component: () => import("../views/index"),
@@ -24,15 +20,20 @@ const main: Array<RouteRecordRaw> = [
       path: 'bigData',
       name: 'Bigdata',
       component: () => import("../views/bigData/index"),
+      meta: { title: TITLE[0] }
     }, {
       path: 'boss',
       name: 'Boss',
       component: () => import("../views/boss/index"),
+      meta: { title: TITLE[1] }
     }]
-  }
+  }, {
+    path: '/login',
+    name: 'login',
+    component: () => import("../views/login"),
+    meta: { title: '登录' }
+  },
 ]
-
-const routes: RouteRecordRaw[] = global.concat(main)
 
 const router = createRouter({
   history: createWebHashHistory(),

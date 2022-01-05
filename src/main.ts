@@ -5,12 +5,13 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 18:06:31
+ * @LastEditTime: 2022-01-05 11:27:55
  */
 import { createApp } from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import "@/utils/permission"
 import dataV from '@jiaminghi/data-view';
 
 // 引入全局css
