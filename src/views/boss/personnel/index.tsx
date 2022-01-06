@@ -5,91 +5,46 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 16:52:41
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 11:01:47
+ * @LastEditTime: 2022-01-06 11:53:02
  */
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, computed, reactive } from 'vue'
 import { enumConfigBossPersonnel } from "@/config/enum";
 import vWaves from "../component/personnelWaves";
 import gDashboard from "@/components/dashboard"
 import gDoubleDealer from "@/components/doubleDealer"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     vWaves,
     gDashboard,
     gDoubleDealer
   },
   name: 'Personnel',
-  setup() {
+  setup(props) {
 
-    const dataWaves = reactive(
-      [{
-        height: "350px",
-        width: "450px",
-        fontSize: 20,
-        textAlign: "left",
-        title: "当月入住人数",
-        name: "入职率",
-        value: 0.6,
-        number: [0],
-      }, {
-        height: "350px",
-        width: "450px",
-        fontSize: 20,
-        textAlign: "left",
-        title: "当月离职人数",
-        name: "离职率",
-        value: 0.6,
-        number: [0],
-      }]
-    )
+    const dataWaves = computed(() => {
+      return props.data[1]
+    })
 
-    const dataDoubleDealer = reactive(
-      [{
-        number: [0],
-        fontSize: 30,
-        name: "入职人员平均司龄"
-      }, {
-        number: [0],
-        fontSize: 30,
-        name: "入职人员平均年龄"
-      }, {
-        number: [0],
-        fontSize: 30,
-        name: "入职人员平均薪资"
-      }, {
-        number: [0],
-        fontSize: 30,
-        name: "离职人员平均司龄"
-      }, {
-        number: [0],
-        fontSize: 30,
-        name: "离职人员平均年龄"
-      }, {
-        number: [0],
-        fontSize: 30,
-        name: "离职人员平均薪资"
-      }]
-    )
+    const dataDoubleDealer = computed(() => {
+      return props.data[0]
+    })
 
     const dataDashboard = reactive({
       height: "200px",
       width: "300px",
     })
 
-    setTimeout(() => {
-      dataDoubleDealer[0].number = [1167]
-      dataDoubleDealer[1].number = [1167]
-      dataDoubleDealer[2].number = [1167]
-      dataDoubleDealer[3].number = [1167]
-      dataDoubleDealer[4].number = [1167]
-      dataDoubleDealer[5].number = [1167]
-    }, 1000)
-
-    setTimeout(() => {
-      dataWaves[0].number = [116799999999]
-      dataWaves[1].number = [116799999999]
-    }, 1000)
 
     return () => (
       <>
@@ -99,7 +54,7 @@ export default defineComponent({
           </div>
           <div class="d-flex jc-between">
             <div class="d-flex during-wrapper">
-              <div class="d-flex during-info">{dataWaves.map(item =>
+              <div class="d-flex during-info">{dataWaves.value.data.map(item =>
 
                 <div class="d-flex flex-column">
                   <div class="d-flex jc-center ">
@@ -127,7 +82,7 @@ export default defineComponent({
                 color={['transparent', '#00c2ff',]} />
             </div>
             <div class="d-flex flex-wrap average-wrapper">
-              {dataDoubleDealer.map(item =>
+              {dataDoubleDealer.value.data.map(item =>
                 <div class="count-wrapper">
                   <g-dashboard height={dataDashboard.height}
                     width={dataDashboard.width} />
