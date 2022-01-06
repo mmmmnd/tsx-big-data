@@ -99,6 +99,32 @@
         width: 50%;
       }
     }
+    .advance{
+      width: 60%;
+      height: 400px;
+      .advance-number{
+        .advance-info{
+          .dv-dig-flop{
+            height: 100px;
+            width: 200px;
+          }
+        }
+        .dv-dec-1{
+          width: 300px;
+          height: 50px;
+          position: absolute;
+          bottom: 0;
+          right: 140px;
+        }
+      }
+    }
+    .advance-ranking{
+      width: 40%;
+      height: 400px;
+      .table-wrapper{
+        height: 330px;
+      }
+    }
     .personnel{
       width: 49%;
       height: 400px;

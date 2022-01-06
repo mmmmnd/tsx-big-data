@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 14:46:34
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-27 15:37:59
+ * @LastEditTime: 2022-01-06 16:40:27
  */
 import { defineComponent } from 'vue'
 
@@ -17,6 +17,10 @@ const PropsType = {
   data: {
     type: Array,
     default: [""]
+  },
+  columnWidth: {
+    type: Array,
+    default: [650]
   }
 } as const
 
@@ -31,7 +35,7 @@ export default defineComponent({
       headerBGC: "transparent",
       oddRowBGC: "transparent",
       evenRowBGC: "transparent",
-      columnWidth: [650],
+      columnWidth: props.columnWidth,
       align: ['center']
     }
 

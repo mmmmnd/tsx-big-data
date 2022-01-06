@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 09:55:11
+ * @LastEditTime: 2022-01-06 16:48:42
  */
 export enum enumConfigCustomer {
   TITLE_NAME = "客户信息",
@@ -30,6 +30,14 @@ export enum enumConfigAccount {
   LAST_MONTH_NAME = "同比上月"
 }
 
+export enum enumConfigAdvance {
+  TITLE_NAME = "垫资统计",
+}
+
+export enum enumConfigAdvanceRanking {
+  TITLE_NAME = "垫资top10",
+}
+
 export enum enumConfigPersonnel {
   TITLE_NAME = "人员信息",
 }
@@ -43,7 +51,7 @@ export enum enumConfigBossPersonnel {
 }
 
 export enum enumConfigrank {
-  TITLE_NAME = "职级分布"
+  TITLE_NAME = "人员性质分布"
 }
 
 export enum enumConfigEducation {
@@ -61,11 +69,11 @@ export enum enumConfigSalary {
 }
 
 export enum enumConfigProportion {
-  TITLE_NAME = "各业务类型占比",
+  TITLE_NAME = "各业务类型平均工资",
 }
 
 export enum enumConfigAverageSalary {
-  TITLE_NAME = "各业务类型平均工资",
+  TITLE_NAME = "各业务类型占比",
 }
 
 export enum enumConfigAnnualSalary {

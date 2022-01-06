@@ -5,11 +5,11 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 16:52:41
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-06 11:53:02
+ * @LastEditTime: 2022-01-06 15:08:11
  */
 import { defineComponent, computed, reactive } from 'vue'
 import { enumConfigBossPersonnel } from "@/config/enum";
-import vWaves from "../component/personnelWaves";
+import gWaves from "@/components/waves";
 import gDashboard from "@/components/dashboard"
 import gDoubleDealer from "@/components/doubleDealer"
 
@@ -25,7 +25,7 @@ const PropsType = {
 export default defineComponent({
   props: PropsType,
   components: {
-    vWaves,
+    gWaves,
     gDashboard,
     gDoubleDealer
   },
@@ -71,7 +71,7 @@ export default defineComponent({
                       </div>
                     </div>
                   </div>
-                  <v-waves height={item.height}
+                  <g-waves height={item.height}
                     width={item.width}
                     value={item.value}
                     name={item.name} />

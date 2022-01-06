@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-16 15:02:59
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-17 16:21:12
+ * @LastEditTime: 2022-01-06 16:52:56
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -97,33 +97,48 @@ export default defineComponent({
           right: '3%',
         },
         xAxis: {
-          type: 'category',
           axisLine: {
+            show: true,
             lineStyle: {
-              color: '#fff',
-              width: 2
+              color: '#ffffff',
+            },
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: "#ffffff",
+              fontSize: 16
             }
           },
           data: val.xNames,
         },
         yAxis: {
-          name: val.name,
-          axisLine: {
-            lineStyle: {
-              color: '#808eb7',
-              width: 2
-            }
+          nameTextStyle: {
+            fontSize: 16,
+            color: "#ffffff"
           },
-          splitLine: { //分割线配置
+          splitLine: {
+            show: false
+          },
+          axisTick: {
+            show: true
+          },
+          axisLine: {
+            show: true,
             lineStyle: {
-              color: "#AAAAAA56",
+              color: '#FFFFFF'
             }
           },
           axisLabel: {
-            formatter: '{value}',
-            color: '#fff',
-            fontSize: 14
-          }
+            show: true,
+            textStyle: {
+              fontSize: 16,
+              color: "#ffffff"
+            }
+          },
         },
         series: datas
       }
