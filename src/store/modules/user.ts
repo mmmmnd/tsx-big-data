@@ -5,9 +5,10 @@
  * @version: 1.0.0
  * @Date: 2022-01-05 11:39:02
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-05 18:05:16
+ * @LastEditTime: 2022-01-07 16:58:27
  */
 import { ActionContext } from 'vuex'
+import { iObject } from "@/interfaces/index";
 import { User } from "@/interfaces/user";
 import useStorage from '@/utils/useStorage';
 const storage = useStorage();
@@ -23,12 +24,12 @@ const state = {
 }
 
 const mutations = {
-  SET_USER_LOGIN(state: State, login): void {
-    const userInfo = Object.assign(state.userInfo, login);
+  SET_USER_LOGIN(state: State, login: User.userInfo): void {
+    const userInfo: iObject = Object.assign(state.userInfo, login);
     storage.setItem("userInfo", userInfo)
   },
   RESET_USER_INFO(state: State): void {
-    state.userInfo = { login: false };
+    state.userInfo.login = false;
     storage.removeItem("userInfo")
   }
 }

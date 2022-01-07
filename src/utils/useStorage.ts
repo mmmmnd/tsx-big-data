@@ -5,8 +5,10 @@
  * @version: 1.0.0
  * @Date: 2022-01-05 17:22:56
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-05 17:33:49
+ * @LastEditTime: 2022-01-07 17:00:23
  */
+import { iObject } from "@/interfaces/index";
+
 const storage = window.localStorage;
 
 export default function () {
@@ -15,7 +17,7 @@ export default function () {
     return JSON.parse(storage.getItem(key))
   }
 
-  const setItem = (key: string, val: string) => {
+  const setItem = (key: string, val: iObject) => {
     storage.setItem(key, JSON.stringify(val))
   }
 

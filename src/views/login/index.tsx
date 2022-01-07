@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2022-01-04 16:53:57
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-05 16:42:11
+ * @LastEditTime: 2022-01-07 16:40:31
  */
 import "@/assets/scss/login.scss";
 import { useStore } from "vuex";
