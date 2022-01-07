@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-28 09:20:22
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 14:46:50
+ * @LastEditTime: 2022-01-07 15:22:02
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigAge } from "@/config/enum";
@@ -13,34 +13,31 @@ import vAge from "../component/agePie"
 import gPie from "@/components/pie"
 import gDoubleDealer from "@/components/doubleDealer"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     vAge,
     gPie,
     gDoubleDealer
   },
   name: 'Age',
-  setup() {
-
+  setup(props) {
     const dataAgePie = reactive({
       height: "400px",
       width: "585px",
       fontSize: 20,
       content: '{nt}岁',
-      number: [0],
-      data: [{
-        value: 153,
-        name: '25岁以下',
-      }, {
-        value: 203,
-        name: '26-35岁',
-      }, {
-        value: 173,
-        name: '36-45岁',
-      }, {
-        value: 136,
-        name: '45岁以上',
-      }],
+      number: props.data[0].data.number,
+      data: props.data[0].data.data,
     })
 
     const dataPie = reactive({
@@ -52,24 +49,9 @@ export default defineComponent({
       legendLeft: "15%",
       fontSize: 20,
       content: '{nt}年',
-      number: [0],
-      lines: ["1年", "2年", "3年", "4年", "5年以上"],
-      data: [{
-        name: '1年',
-        value: 76
-      }, {
-        name: '2年',
-        value: 45
-      }, {
-        name: '3年',
-        value: 36
-      }, {
-        name: '4年',
-        value: 24
-      }, {
-        name: '5年以上',
-        value: 11
-      }]
+      number: props.data[1].data.number,
+      lines: props.data[1].data.lines,
+      data: props.data[1].data.data
     })
 
     setTimeout(() => {

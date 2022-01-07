@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-05 11:27:55
+ * @LastEditTime: 2022-01-07 10:51:48
  */
 import { createApp } from 'vue'
 import App from './App'

@@ -5,24 +5,34 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 10:40:49
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 14:32:37
+ * @LastEditTime: 2022-01-07 14:24:59
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigrank } from "@/config/enum";
 import vRankColumnar from "../component/rankColumnar";
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     vRankColumnar
   },
   name: 'Rank',
-  setup() {
+  setup(props) {
 
     const dataColumnar = reactive({
       height: "380px",
       width: "700px",
-      name: ["专业", "主管", "经理"],
-      value: [194, 295, 399]
+      name: props.data.name,
+      value: props.data.value
     })
 
     return () => (

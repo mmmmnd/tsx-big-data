@@ -5,13 +5,13 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-06 11:19:41
+ * @LastEditTime: 2022-01-07 15:20:41
  */
 import "@/assets/scss/boss.scss";
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive, } from 'vue'
 import vPersonnel from "../personnel";
 import vDataMonthSpending from "../dataMonthSpending";
-import vDataMonthAccount from "../dataMonthaccount";
+import vDataMonthAccount from "../dataMonthAccount";
 import vEducation from "../education";
 import vRank from "../rank";
 import vAge from "../age";
@@ -37,13 +37,35 @@ export default defineComponent({
   },
   name: 'Boss',
   setup() {
-    const data = reactive({
+    const data = reactive<any>({
       personnel: [{
         title: "dyrysl",
         data: []
       }, {
         title: "dyryldzb",
         data: []
+      }],
+      monthAccount: [{
+        title: "dydzsj",
+        data: {}
+      }],
+      education: [{
+        title: "xlfb",
+        data: []
+      }, {
+        title: "nnrs",
+        data: []
+      }],
+      rank: [{
+        title: "ryxzfb",
+        data: {}
+      }],
+      age: [{
+        title: "rynlfb",
+        data: {}
+      }, {
+        title: "ryslfb",
+        data: {}
       }]
     })
 
@@ -58,25 +80,23 @@ export default defineComponent({
           })
         }
       }
-
     })
-
     return () => (
       <>
         <div id="boss">
 
           <div class="d-flex jc-between item-box">
             <div class="d-flex education">
-              <v-education />
+              {!!data.personnel[0].data.length && <v-education data={data.education} />}
             </div>
             <div class="d-flex rank">
-              <v-rank />
+              {!!data.rank[0].data?.value && <v-rank data={data.rank[0].data} />}
             </div>
           </div>
 
           <div class="d-flex jc-between item-box">
             <div class="d-flex age">
-              <v-age />
+              {!!data.age[0].data?.data && <v-age data={data.age} />}
             </div>
             <div class="d-flex salary">
               <v-salary />
@@ -85,7 +105,7 @@ export default defineComponent({
 
           <div class="d-flex item-box">
             <div class="d-flex personnel">
-              <v-personnel data={data.personnel} />
+              {!!data.personnel[0].data.length && <v-personnel data={data.personnel} />}
             </div>
           </div>
 
@@ -94,7 +114,7 @@ export default defineComponent({
               <v-data-month-spending />
             </div>
             <div class="d-flex data-month-account">
-              <v-data-month-account />
+              {!!data.monthAccount[0].data?.data && <v-data-month-account data={data.monthAccount[0].data} />}
             </div>
           </div>
 
