@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-07 15:20:41
+ * @LastEditTime: 2022-01-07 18:04:18
  */
 import "@/assets/scss/boss.scss";
 import { defineComponent, reactive, } from 'vue'
@@ -66,6 +66,14 @@ export default defineComponent({
       }, {
         title: "ryslfb",
         data: {}
+      }],
+      proportion: [{
+        title: "ywlxfb",
+        data: {}
+      }],
+      annualSalary: [{
+        title: "ghypjgz",
+        data: {}
       }]
     })
 
@@ -120,7 +128,7 @@ export default defineComponent({
 
           <div class="d-flex jc-between item-box">
             <div class="d-flex proportion">
-              <v-proportion />
+              {!!data.proportion[0].data?.data && <v-proportion data={data.proportion[0].data} />}
             </div>
             <div class="d-flex average-salary">
               <v-average-salary />
@@ -129,7 +137,7 @@ export default defineComponent({
 
           <div class="d-flex item-box">
             <div class="d-flex annualSalary">
-              <v-annualSalary />
+              {!!data.annualSalary[0].data?.data && <v-annual-salary data={data.annualSalary[0].data} />}
             </div>
           </div>
 

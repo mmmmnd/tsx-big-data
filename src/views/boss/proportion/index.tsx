@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-29 15:47:02
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-31 15:02:44
+ * @LastEditTime: 2022-01-07 17:08:31
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -13,13 +13,23 @@ import gPie from "@/components/pie"
 import { enumConfigAverageSalary } from "@/config/enum";
 import gTableSwiper from "@/components/tableSwiper"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     gPie,
     gTableSwiper,
   },
   name: 'Proportion',
-  setup() {
+  setup(props) {
 
     const dataPie = reactive({
       height: "350px",
@@ -27,27 +37,8 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
       legendTop: "0%",
-      legendLeft: "15%",
-      lines: ["外包A类", "外包B类", "外包C类", "外包D类", "劳务派遣A类", "劳务派遣B类"],
-      data: [{
-        name: '外包A类',
-        value: 2363
-      }, {
-        name: '外包B类',
-        value: 11344
-      }, {
-        name: '外包C类',
-        value: 1253
-      }, {
-        name: '外包D类',
-        value: 4643
-      }, {
-        name: '劳务派遣A类',
-        value: 7854
-      }, {
-        name: '劳务派遣B类',
-        value: 4534
-      }]
+      lines: props.data.lines,
+      data: props.data.data
     })
 
     return () => (
@@ -64,7 +55,6 @@ export default defineComponent({
                 data={dataPie.data}
                 lines={dataPie.lines}
                 legendTop={dataPie.legendTop}
-                legendLeft={dataPie.legendLeft}
                 seriesRadius={dataPie.seriesRadius}
                 seriesPosition={dataPie.seriesPosition} />
               <dv-decoration-3 class="dv-dec-3"

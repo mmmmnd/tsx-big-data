@@ -5,17 +5,15 @@
  * @version: 1.0.0
  * @Date: 2021-12-31 16:06:50
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 16:28:48
+ * @LastEditTime: 2022-01-10 09:30:25
  */
 import axios from 'axios'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElLoading } from 'element-plus'
 import { HTTP_ERROR } from '@/config/index'
 
 /**
- * @description: 异常消息提示
- * @param {string} string
- * @return {*}
- * @author: gumingchen
+ * 异常消息提示
+ * @param { String } message 错误信息
  */
 const prompt = (message?: string): void => {
   ElMessage({
@@ -24,12 +22,10 @@ const prompt = (message?: string): void => {
     type: 'warning',
   })
 }
+let loading = null;
 
 /**
- * @description: axios创建
- * @param {*}
- * @return {*}
- * @author: gumingchen
+ * axios创建
  */
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
@@ -40,13 +36,15 @@ const service = axios.create({
 })
 
 /**
- * @description: axios请求拦截器
- * @param {*}
- * @return {*}
- * @author: gumingchen
+ * 拦截器
  */
 service.interceptors.request.use(
   config => {
+    loading = ElLoading.service({
+      lock: true,
+      text: 'Loading',
+      background: 'rgba(0, 0, 0, 0.7)',
+    })
     // const tokenVal = store.getters['user/tokenVal']
     // if (tokenVal) {
     //   config.headers[TOKEN_KEY] = tokenVal
@@ -59,24 +57,22 @@ service.interceptors.request.use(
     return config
   },
   error => {
-    console.log(error) // for debug
+    console.log(error)
     return Promise.reject(error)
   }
 )
 
 /**
- * @description: axios响应拦截器
- * @param {*}
- * @return {*}
- * @author: gumingchen
+ * 响应器
  */
 service.interceptors.response.use(
   response => {
+    loading.close()
     return response.data || null
   },
   error => {
     const msg = error && error.response ? HTTP_ERROR[error.response.status] || `连接错误${error.response.status}` : "连接到服务器失败";
-
+    loading.close()
     prompt(msg);
     return Promise.reject(error)
   }

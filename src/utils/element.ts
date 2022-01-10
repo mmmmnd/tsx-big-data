@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2022-01-04 16:11:07
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 17:55:10
+ * @LastEditTime: 2022-01-10 09:19:51
  */
 import {
   ElRow,
@@ -13,7 +13,9 @@ import {
   ElInput,
   ElButton,
   ElFormItem,
-  ElMessageBox
+  ElMessageBox,
+  ElLoading,
+  ElMessage
 } from 'element-plus';
 
 export const components: any[] = [
@@ -23,4 +25,8 @@ export const components: any[] = [
   ElButton,
   ElFormItem,
 ]
-export const plugins: any[] = [ElMessageBox]
+export const plugins: any[] = [
+  ElMessageBox,
+  ElLoading,
+  ElMessage
+]
