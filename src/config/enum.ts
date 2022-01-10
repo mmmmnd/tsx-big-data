@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-06 16:48:42
+ * @LastEditTime: 2022-01-10 16:04:55
  */
 export enum enumConfigCustomer {
   TITLE_NAME = "客户信息",
@@ -78,4 +78,10 @@ export enum enumConfigAverageSalary {
 
 export enum enumConfigAnnualSalary {
   TITLE_NAME = "各行业年平均工资",
+}
+
+export enum enumConfigLogin {
+  TITLE_NAME = "可视化大屏登录",
+  SMS_NAME = "获取短信",
+  LOGIN_NAME = "登录",
 }

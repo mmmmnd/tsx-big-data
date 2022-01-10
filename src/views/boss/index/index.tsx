@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:24:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-07 18:04:18
+ * @LastEditTime: 2022-01-10 16:07:32
  */
 import "@/assets/scss/boss.scss";
 import { defineComponent, reactive, } from 'vue'
@@ -20,7 +20,7 @@ import vProportion from "../proportion";
 import vAverageSalary from "../averageSalary";
 import vAnnualSalary from "../annualSalary";
 
-import { indexApi } from '@/api/bigdata'
+import { indexApi } from '@/api'
 
 export default defineComponent({
   components: {
