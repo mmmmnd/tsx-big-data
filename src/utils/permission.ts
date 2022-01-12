@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2020-08-31 10:33:51
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-05 17:34:43
+ * @LastEditTime: 2022-01-11 14:29:24
  */
 import router from "@/router";
 import store from '@/store';
@@ -30,8 +30,8 @@ router.beforeEach(async (to, from, next) => {
       next({ path: '/' });
       NProgress.done();
     } else {
-      const hasGetUserLogin = store.getters.userInfo["login"];
-      if (hasGetUserLogin) {
+      const hasGetInfoLogin = store.getters.info["login"];
+      if (hasGetInfoLogin) {
         next();
       } else {
         try {

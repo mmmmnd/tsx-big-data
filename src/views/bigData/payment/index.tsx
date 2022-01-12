@@ -5,47 +5,38 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 16:57:46
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 10:29:44
+ * @LastEditTime: 2022-01-11 16:46:21
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
 import { enumConfigPayment } from "@/config/enum";
 import vPaymentBubble from "../component/paymentBubble"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     vPaymentBubble
   },
   name: 'Spending',
-  setup() {
+  setup(props) {
 
     const dataBubble = reactive(
-      [{
-        name: "工资笔数",
-        value: "12355"
-      }, {
-        name: "工资人数",
-        value: "12093"
-      }, {
-        name: "公积金人数",
-        value: "8874"
-      }, {
-        name: "社保人数",
-        value: "7427"
-      }, {
-        name: "个税总额",
-        value: "4308"
-      }, {
-        name: "社保总额",
-        value: "12355"
-      }, {
-        name: "其他总额",
-        value: "12093"
-      }, {
-        name: "工资总额",
-        value: "8874"
-      }]
-    );
+      props.data[0].data.map(item => {
+        return {
+          name: item.name,
+          value: item.value
+        }
+      })
+    )
 
     return () => (
       <>

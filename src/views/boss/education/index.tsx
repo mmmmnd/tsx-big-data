@@ -5,10 +5,10 @@
  * @version: 1.0.0
  * @Date: 2021-12-24 10:40:24
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-07 11:44:06
+ * @LastEditTime: 2022-01-12 09:20:04
  */
-import { defineComponent, reactive, computed } from 'vue';
-import { enumConfigEducation } from "@/config/enum";
+import { defineComponent, reactive, } from 'vue';
+import { enumConfigEducation, enumConfig } from "@/config/enum";
 import gPie from "@/components/pie"
 import gDoubleDealer from "@/components/doubleDealer"
 
@@ -30,9 +30,16 @@ export default defineComponent({
   name: 'Education',
   setup(props) {
 
-    const dataDoubleDealer = computed(() => {
-      return props.data[1]
-    })
+    const dataDoubleDealer = reactive(
+      props.data[1].data.map(item => {
+        return {
+          fontSize: item.fontSize,
+          name: item.name,
+          number: item.number,
+          textAlign: item.textAlign,
+        }
+      })
+    )
 
     const dataPie = reactive({
       height: "360px",
@@ -54,7 +61,7 @@ export default defineComponent({
               color={['#00c2ff', '#00c2ff']}>
 
               <div class="d-flex flex-column jc-evenly h-100">
-                {dataDoubleDealer.value.data.map((item, index) => index == 0 ?
+                {dataDoubleDealer.map((item, index) => index == 0 ?
                   <div class="d-flex flex-column ai-center">
                     <g-double-dealer class="dv-dig-flop dv-dig-title"
                       number={item.number}
@@ -83,7 +90,12 @@ export default defineComponent({
           <div class="d-flex education">
             <dv-border-box-5 color={['#00c2ff', '#00c2ff']}>
               <div class="d-flex title pl-3 pt-3">
-                <h5 class="fs-md text-blue">{enumConfigEducation.TITLE_NAME}</h5>
+                <h5 class="fs-md text-blue">
+                  {enumConfigEducation.TITLE_NAME}
+                  <span class="text-info">
+                    （{enumConfig.PERSONNEL_STATUS}）
+                  </span>
+                </h5>
               </div>
               <g-pie height={dataPie.height}
                 width={dataPie.width}

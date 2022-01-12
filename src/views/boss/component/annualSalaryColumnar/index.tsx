@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-31 08:57:26
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 11:19:21
+ * @LastEditTime: 2022-01-11 17:26:29
  */
 import { defineComponent, watch, ref, shallowReactive } from 'vue'
 
@@ -162,10 +162,10 @@ export default defineComponent({
 
       setInterval(() => {
         endValue >= index.length
-          ? chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue = 0, endValue: endValue = 7 })
-          : chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue += 7, endValue: endValue += 7 });
+          ? chartRef.value && chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue = 0, endValue: endValue = 7 })
+          : chartRef.value && chartRef.value.setDispatchAction({ type: 'dataZoom', startValue: startValue += 7, endValue: endValue += 7 });
 
-        chartRef.value.initChart({ tooltip });
+        chartRef.value && chartRef.value.initChart({ tooltip });
       }, 5000)
 
     }

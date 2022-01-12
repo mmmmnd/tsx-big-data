@@ -17,6 +17,9 @@
     overflow-y: auto;
   }
   .host-body {
+    .title{
+      width: 520px;
+    }
     .nav{
       width: 480px;
       .dv-dec-10,
@@ -27,9 +30,14 @@
       .dv-dec-10-s {
         transform: rotateY(180deg);
       }
-      .router{
-        border-radius: 5px;
+      .on-route{
+        display: inline;
+        float: right;
+        .router{
+          border-radius: 5px;
+        }
       }
+      
     }
     .dv-dec-8 {
       width: 200px;

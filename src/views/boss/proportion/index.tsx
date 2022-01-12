@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-29 15:47:02
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-07 17:08:31
+ * @LastEditTime: 2022-01-11 10:08:00
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -37,8 +37,8 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
       legendTop: "0%",
-      lines: props.data.lines,
-      data: props.data.data
+      lines: props.data[0].data.lines,
+      data: props.data[0].data.data
     })
 
     return () => (

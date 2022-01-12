@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 16:52:53
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 10:29:26
+ * @LastEditTime: 2022-01-11 16:47:47
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -14,7 +14,17 @@ import gPie from "@/components/pie"
 import gDashboard from "@/components/dashboard"
 import gDoubleDealer from "@/components/doubleDealer"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     gPie,
     gDashboard,
@@ -22,7 +32,7 @@ export default defineComponent({
 
   },
   name: 'Spending',
-  setup() {
+  setup(props) {
 
     const dataPie = reactive({
       height: "340px",
@@ -30,14 +40,8 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
       legendTop: "0%",
-      lines: ["离职人数", "在职人数"],
-      data: [{
-        name: '离职人数',
-        value: 16746
-      }, {
-        name: '在职人数',
-        value: 212134
-      }]
+      lines: props.data[0].data.lines,
+      data: props.data[0].data.data
     })
 
     const dataDashboard = reactive({
@@ -45,30 +49,15 @@ export default defineComponent({
       width: "200px",
     })
 
-    const dataDoubleDealer = reactive([{
-      number: [0],
-      fontSize: 30,
-      name: "累计总员工数"
-    }, {
-      number: [0],
-      fontSize: 30,
-      name: "当前在职人数"
-    }, {
-      number: [0],
-      fontSize: 30,
-      name: "当日入职人数"
-    }, {
-      number: [0],
-      fontSize: 30,
-      name: "当日离职人数"
-    }])
-
-    setTimeout(() => {
-      dataDoubleDealer[0].number = [1167]
-      dataDoubleDealer[1].number = [1167]
-      dataDoubleDealer[2].number = [1167]
-      dataDoubleDealer[3].number = [1167]
-    }, 1000)
+    const dataDoubleDealer = reactive(
+      props.data[1].data.map(item => {
+        return {
+          number: item.number,
+          fontSize: item.fontSize,
+          name: item.name
+        }
+      })
+    )
 
     return () => (
       <>
@@ -95,7 +84,7 @@ export default defineComponent({
                 <div class="d-flex jc-center ai-center count-main">
                   <g-double-dealer class="dv-dig-flop"
                     number={item.number}
-                    fontSize={item.fontSize} />
+                    fontSize={18} />
                 </div>
                 <p class="text-center count-text">{item.name}</p>
               </div>)}

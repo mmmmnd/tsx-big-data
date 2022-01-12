@@ -5,11 +5,10 @@
  * @version: 1.0.0
  * @Date: 2021-12-28 09:20:22
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-07 15:22:02
+ * @LastEditTime: 2022-01-12 09:32:44
  */
 import { defineComponent, reactive } from 'vue';
-import { enumConfigAge } from "@/config/enum";
-import vAge from "../component/agePie"
+import { enumConfigAge, enumConfig } from "@/config/enum";
 import gPie from "@/components/pie"
 import gDoubleDealer from "@/components/doubleDealer"
 
@@ -25,7 +24,6 @@ const PropsType = {
 export default defineComponent({
   props: PropsType,
   components: {
-    vAge,
     gPie,
     gDoubleDealer
   },
@@ -34,9 +32,13 @@ export default defineComponent({
     const dataAgePie = reactive({
       height: "400px",
       width: "585px",
+      seriesPosition: "outside",
+      seriesRadius: ['30%', '50%'],
+      legendTop: "5%",
       fontSize: 20,
       content: '{nt}岁',
       number: props.data[0].data.number,
+      lines: props.data[0].data.lines,
       data: props.data[0].data.data,
     })
 
@@ -46,7 +48,6 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['30%', '50%'],
       legendTop: "5%",
-      legendLeft: "15%",
       fontSize: 20,
       content: '{nt}年',
       number: props.data[1].data.number,
@@ -66,7 +67,12 @@ export default defineComponent({
           <dv-decoration-2 class="dv-dec-2"
             color={['#00c2ff', '#00c2ff']} />
           <div class="d-flex title pl-3">
-            <h5 class="fs-md text-blue">{enumConfigAge.TITLE_NAME}</h5>
+            <h5 class="fs-md text-blue">
+              {enumConfigAge.TITLE_NAME}
+              <span class="text-info">
+                （{enumConfig.PERSONNEL_STATUS}）
+              </span>
+            </h5>
           </div>
           <div class="d-flex mt-5 age-wrapper">
             <div class="d-flex flex-column ai-center">
@@ -77,9 +83,13 @@ export default defineComponent({
                   fontSize={dataAgePie.fontSize}
                   content={dataAgePie.content} />
               </div>
-              <v-age height={dataPie.height}
-                width={dataPie.width}
-                data={dataAgePie.data} />
+              <g-pie height={dataAgePie.height}
+                width={dataAgePie.width}
+                data={dataAgePie.data}
+                lines={dataPie.lines}
+                legendTop={dataAgePie.legendTop}
+                seriesRadius={dataAgePie.seriesRadius}
+                seriesPosition={dataAgePie.seriesPosition} />
             </div>
 
             <div class="d-flex flex-column ai-center">
@@ -95,7 +105,6 @@ export default defineComponent({
                 data={dataPie.data}
                 lines={dataPie.lines}
                 legendTop={dataPie.legendTop}
-                legendLeft={dataPie.legendLeft}
                 seriesRadius={dataPie.seriesRadius}
                 seriesPosition={dataPie.seriesPosition} />
             </div>

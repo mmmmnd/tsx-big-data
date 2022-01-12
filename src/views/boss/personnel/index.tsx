@@ -5,9 +5,9 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 16:52:41
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-06 15:08:11
+ * @LastEditTime: 2022-01-12 09:04:24
  */
-import { defineComponent, computed, reactive } from 'vue'
+import { defineComponent, reactive } from 'vue'
 import { enumConfigBossPersonnel } from "@/config/enum";
 import gWaves from "@/components/waves";
 import gDashboard from "@/components/dashboard"
@@ -32,19 +32,35 @@ export default defineComponent({
   name: 'Personnel',
   setup(props) {
 
-    const dataWaves = computed(() => {
-      return props.data[1]
-    })
+    const dataWaves = reactive(
+      props.data[1].data.map(item => {
+        return {
+          height: item.height,
+          width: item.width,
+          fontSize: item.fontSize,
+          textAlign: item.textAlign,
+          title: item.title,
+          name: item.name,
+          value: item.value,
+          number: item.number,
+        }
+      })
+    )
 
-    const dataDoubleDealer = computed(() => {
-      return props.data[0]
-    })
+    const dataDoubleDealer = reactive(
+      props.data[0].data.map(item => {
+        return {
+          number: item.number,
+          fontSize: item.fontSize,
+          name: item.name
+        }
+      })
+    )
 
     const dataDashboard = reactive({
       height: "200px",
       width: "300px",
     })
-
 
     return () => (
       <>
@@ -54,7 +70,7 @@ export default defineComponent({
           </div>
           <div class="d-flex jc-between">
             <div class="d-flex during-wrapper">
-              <div class="d-flex during-info">{dataWaves.value.data.map(item =>
+              <div class="d-flex during-info">{dataWaves.map(item =>
 
                 <div class="d-flex flex-column">
                   <div class="d-flex jc-center ">
@@ -82,7 +98,7 @@ export default defineComponent({
                 color={['transparent', '#00c2ff',]} />
             </div>
             <div class="d-flex flex-wrap average-wrapper">
-              {dataDoubleDealer.value.data.map(item =>
+              {dataDoubleDealer.map(item =>
                 <div class="count-wrapper">
                   <g-dashboard height={dataDashboard.height}
                     width={dataDashboard.width} />

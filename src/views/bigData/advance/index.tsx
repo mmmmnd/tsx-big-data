@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2022-01-06 14:33:13
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-06 16:46:59
+ * @LastEditTime: 2022-01-11 16:32:48
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -14,38 +14,38 @@ import vAdvanceChat from "../component/advanceChat"
 import gWaves from "@/components/waves";
 import gDoubleDealer from "@/components/doubleDealer"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     vAdvanceChat,
     gWaves,
     gDoubleDealer
   },
   name: 'Advance',
-  setup() {
+  setup(props) {
 
     const dataAdvance = reactive({
       height: "350px",
       width: "500px",
-      name: ['垫资总额', '已还款金额'],
-      value: [99999.99, 66666.66]
+      name: props.data[0].data.header,
+      value: props.data[0].data.data
     })
 
     const dataWaves = reactive({
       height: "300px",
       width: "320px",
-      name: "还款率",
-      value: 0.6,
-      data: [{
-        number: [123123],
-        fontSize: 30,
-        content: '{nt}笔',
-        name: "垫资笔数"
-      }, {
-        number: [1231],
-        fontSize: 30,
-        content: '{nt}家',
-        name: "垫资单位数"
-      }]
+      name: props.data[1].data.name,
+      value: props.data[1].data.value,
+      data: props.data[1].data.data
     })
 
     return () => (

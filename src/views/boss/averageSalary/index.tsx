@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-29 15:47:39
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-30 18:13:44
+ * @LastEditTime: 2022-01-11 10:12:22
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -13,19 +13,29 @@ import { enumConfigProportion } from "@/config/enum";
 import gTableSwiper from "@/components/tableSwiper"
 import vAverageSalary from "../component/averageSalaryChart"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     gTableSwiper,
     vAverageSalary
   },
   name: 'AverageSalary',
-  setup() {
+  setup(props) {
 
     const dataChart = reactive({
       height: "350px",
       width: "900px",
-      data: [94, 35, 65, 14, 105, 23],
-      xName: ["外包A类", "外包B类", "外包C类", "外包D类", "劳务派遣A类", "劳务派遣B类"],
+      data: props.data[0].data.data,
+      xName: props.data[0].data.xName,
     })
 
     return () => (

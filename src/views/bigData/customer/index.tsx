@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 11:33:53
+ * @LastEditTime: 2022-01-11 16:43:20
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive, ref } from 'vue'
@@ -18,7 +18,17 @@ import SwiperCore, { Autoplay, Pagination, FreeMode, Thumbs } from 'swiper'
 
 SwiperCore.use([Autoplay, Pagination, FreeMode, Thumbs]);
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     vCustomerChart,
     Swiper,
@@ -26,41 +36,20 @@ export default defineComponent({
     gDoubleDealer
   },
   name: 'Customer',
-  setup() {
+  setup(props) {
 
-    const dataChart = reactive([
-      {
-        name: "当年单位新增",
-        number: [0],
-        fontSize: 20,
-        lines: ["结算单位", "协议单位"],
-        xNames: ["2021", "2020", "2019", "2018"],
-        lists: [
-          [67, 97, 51, 38],
-          [94, 23, 43, 18]
-        ]
-      }, {
-        name: "当季度单位新增",
-        number: [0],
-        fontSize: 20,
-        lines: ["结算单位", "协议单位"],
-        xNames: ["第一季度", "第二季度", "第三季度", "第四季度"],
-        lists: [
-          [67, 97, 51, 38],
-          [94, 23, 43, 18]
-        ]
-      }, {
-        name: "当月单位新增",
-        number: [0],
-        fontSize: 20,
-        lines: ["结算单位", "协议单位"],
-        xNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
-        lists: [
-          [67, 97, 51, 38, 67, 97, 51, 38, 94, 23, 43, 18],
-          [94, 23, 43, 18, 97, 51, 38, 67, 67, 97, 51, 38]
-        ]
-      }
-    ])
+    const dataChart = reactive(
+      props.data[0].data.map(item => {
+        return {
+          name: item.name,
+          number: item.number,
+          fontSize: item.fontSize,
+          lines: item.lines,
+          xNames: item.xNames,
+          lists: item.lists
+        }
+      })
+    )
 
     const thumbsSwiper = ref(null);
 
@@ -83,16 +72,6 @@ export default defineComponent({
       }
     })
 
-    const setThumbsSwiper = (swiper) => {
-      thumbsSwiper.value = swiper;
-    }
-
-    setTimeout(() => {
-      dataChart[0].number = [1167]
-      dataChart[1].number = [12312]
-      dataChart[2].number = [11562367]
-    }, 1000)
-
     return () => (
       <>
         <dv-border-box-9 class="p-4">
@@ -104,21 +83,6 @@ export default defineComponent({
                 color={['#00c2ff', '#000000']} />
             </div>
           </div>
-          <swiper class="my-1 nav-customer"
-            freeMode={true}
-            watchSlidesProgress={true}
-            spaceBetween={10}
-            slidesPerView={1}
-            onSwiper={setThumbsSwiper}>{dataChart.map(item =>
-              <swiper-slide class="swiper-no-swiping">
-                <div class="d-flex flex-column text-center">
-                  <g-double-dealer class="mt-2 dv-dig-flop"
-                    number={item.number}
-                    fontSize={item.fontSize} />
-                  <p class="mt-1 text-blue">{item.name}</p>
-                </div>
-              </swiper-slide>)}
-          </swiper>
           <swiper spaceBetween={30}
             centeredSlides={true}
             thumbs={swiper_options.thumbs}

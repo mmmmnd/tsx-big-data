@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-10 16:04:55
+ * @LastEditTime: 2022-01-12 09:18:19
  */
 export enum enumConfigCustomer {
   TITLE_NAME = "客户信息",
@@ -84,4 +84,8 @@ export enum enumConfigLogin {
   TITLE_NAME = "可视化大屏登录",
   SMS_NAME = "获取短信",
   LOGIN_NAME = "登录",
+}
+
+export enum enumConfig {
+  PERSONNEL_STATUS = "在职离职",
 }

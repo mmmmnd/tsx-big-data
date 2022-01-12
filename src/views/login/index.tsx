@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2022-01-04 16:53:57
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-10 16:07:29
+ * @LastEditTime: 2022-01-11 18:24:20
  */
 import "@/assets/scss/login.scss";
 import { useStore } from "vuex";
@@ -14,7 +14,7 @@ import { defineComponent, ref, reactive } from 'vue';
 import useFilter from "@/utils/useFilter"
 import { enumConfigLogin } from "@/config/enum";
 import { ElMessage } from 'element-plus'
-import { smsApi } from '@/api'
+import { smsApi, checkApi } from '@/api'
 export default defineComponent({
   name: 'Login',
   setup() {
@@ -66,9 +66,9 @@ export default defineComponent({
 
         if (!filter.phone(loginForm.phone)) return ElMessage({ showClose: true, message: "请输入正确手机号码！", type: 'error', });
 
-        onSetTime(60);
-
         smsApi({ mobile: loginForm.phone }).then(r => {
+          onSetTime(60);
+
           ElMessage({ showClose: true, message: r.msg, type: 'success', });
         })
       }
@@ -90,9 +90,14 @@ export default defineComponent({
     const onSubmit = () => {
       ruleFormRef.value.validate((valid: boolean) => {
         if (valid) {
-          sessionStorage.setItem("login", JSON.stringify(true));
-          store.dispatch("user/setUserLogin", { login: true });
-          router.push({ path: redirect as string || '/' })
+          const params = { mobile: loginForm.phone, sms: loginForm.sms };
+          checkApi(params).then(r => {
+            if (r.code === 0) {
+              sessionStorage.setItem("login", JSON.stringify(true));
+              store.dispatch("user/setUserLogin", { login: true });
+              router.push({ path: redirect as string || '/' })
+            }
+          })
         }
       })
     }

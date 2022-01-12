@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-16 15:02:59
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-06 16:52:56
+ * @LastEditTime: 2022-01-11 18:19:22
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -91,8 +91,8 @@ export default defineComponent({
           },
         },
         grid: {
-          left: '5%',
-          top: '10%',
+          left: '10%',
+          top: '20%',
           bottom: '10%',
           right: '3%',
         },
@@ -116,6 +116,7 @@ export default defineComponent({
           data: val.xNames,
         },
         yAxis: {
+          name: "万",
           nameTextStyle: {
             fontSize: 16,
             color: "#ffffff"

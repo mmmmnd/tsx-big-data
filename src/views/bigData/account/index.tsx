@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-17 16:38:44
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 10:22:33
+ * @LastEditTime: 2022-01-11 16:49:33
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -15,7 +15,17 @@ import gDashboard from "@/components/dashboard"
 import gTableSwiper from "@/components/tableSwiper"
 import gDoubleDealer from "@/components/doubleDealer"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     gPie,
     gDashboard,
@@ -23,7 +33,7 @@ export default defineComponent({
     gDoubleDealer
   },
   name: 'Spending',
-  setup() {
+  setup(props) {
 
     const dataPie = reactive({
       height: "340px",
@@ -31,29 +41,12 @@ export default defineComponent({
       seriesPosition: "outside",
       seriesRadius: ['0%', '50%'],
       legendTop: "0%",
-      content: "{nt}% ↑",
       fontSize: 30,
-      number: [0],
-      lines: ["津贴", "减免", "稳岗", "未分类", "工资", "其他"],
-      data: [{
-        name: '津贴',
-        value: 2363
-      }, {
-        name: '减免',
-        value: 11344
-      }, {
-        name: '稳岗',
-        value: 1253
-      }, {
-        name: '未分类',
-        value: 4643
-      }, {
-        name: '工资',
-        value: 7854
-      }, {
-        name: '其他',
-        value: 4534
-      }]
+      content2: props.data[1].data.content2,
+      number2: props.data[1].data.number2,
+      number1: props.data[1].data.number1,
+      lines: props.data[1].data.lines,
+      data: props.data[1].data.data
     })
 
 
@@ -63,24 +56,9 @@ export default defineComponent({
     })
 
     const dataTable = reactive({
-      header: ['到账单位', '到账总额', '到账时间'],
-      data: [
-        ['海口市财政国库支付局2021年第十八批海口市引进人才住房补贴人员名单住房补贴结算', '94328', '2021-12-20'],
-        ['陵水黎族自治县统计局（代发）2021-12结算申报表', '94327', '2021-12-20'],
-        ['海口市美兰区江东新区动迁工作指挥部2021年第十八批海口市引进人才住房补贴人员名单住房补贴结算表', '1639985744', '行3列3'],
-        ['陵水黎族自治县统计局2021-12结算申报表', '1639985979', '2021-12-20'],
-        ['陵水黎族自治县教育局（熊芷莹）2021-12结算申报表', '94328', '2021-12-20'],
-        ['陵水黎族自治县教育局（邱霜霜）2021-12结算申报表', '1639985744', '2021-12-20'],
-        ['中国电信股份有限公司澄迈分公司后端部（天诚公司）2021-12结算申报表', '1639985744', '2021-12-20'],
-        ['定安县人民政府招待所22021-12结算申报表', '94328', '2021-12-20'],
-        ['儋州市那大镇茶山村民委员会2021-12结算申报表', '1639985744', '2021-12-20'],
-        ['定安县人民政府招待所（公益性1）2021-12结算申报表', '1639985744', '2021-12-20']
-      ]
+      header: props.data[0].data.header,
+      data: props.data[0].data.data
     })
-
-    setTimeout(() => {
-      dataPie.number = [1167]
-    }, 1000)
 
     return () => (
       <>
@@ -106,14 +84,14 @@ export default defineComponent({
                   <div class="d-flex flex-column jc-center ai-center count-main">
                     <p class="fs-xl">{enumConfigAccount.STROKE_COUNT_NAME}</p>
                     <g-double-dealer class="mt-4 dv-dig-flop"
-                      number={dataPie.number}
+                      number={dataPie.number1}
                       fontSize={dataPie.fontSize} />
                   </div>
                 </div>
                 <div class="d-flex flex-column ai-center month-wrapper">
                   <g-double-dealer class="dv-dig-flop"
-                    content={dataPie.content}
-                    number={dataPie.number}
+                    content={dataPie.content2}
+                    number={dataPie.number2}
                     fontSize={dataPie.fontSize} />
                   <p class="fs-xl mt-4">{enumConfigAccount.LAST_MONTH_NAME}</p>
                   <dv-decoration-1 class="dv-dec-1"

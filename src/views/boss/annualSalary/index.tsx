@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-31 08:53:39
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-07 18:04:12
+ * @LastEditTime: 2022-01-11 10:08:44
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive } from 'vue'
@@ -32,8 +32,8 @@ export default defineComponent({
     const dataChart = reactive({
       height: "600px",
       width: "1820px",
-      data: props.data.data,
-      xName: props.data.xName
+      data: props.data[0].data.data,
+      xName: props.data[0].data.xName
     })
 
     return () => (

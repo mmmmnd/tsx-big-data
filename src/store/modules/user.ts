@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2022-01-05 11:39:02
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-07 16:58:27
+ * @LastEditTime: 2022-01-11 14:28:32
  */
 import { ActionContext } from 'vuex'
 import { iObject } from "@/interfaces/index";
@@ -14,28 +14,28 @@ import useStorage from '@/utils/useStorage';
 const storage = useStorage();
 
 interface State {
-  userInfo: User.userInfo
+  info: User.info
 }
 
 const state = {
-  userInfo: storage.getItem("userInfo") || {
+  info: storage.getItem("info") || {
     login: false
   }
 }
 
 const mutations = {
-  SET_USER_LOGIN(state: State, login: User.userInfo): void {
-    const userInfo: iObject = Object.assign(state.userInfo, login);
-    storage.setItem("userInfo", userInfo)
+  SET_USER_LOGIN(state: State, login: User.info): void {
+    const info: iObject = Object.assign(state.info, login);
+    storage.setItem("info", info)
   },
   RESET_USER_INFO(state: State): void {
-    state.userInfo.login = false;
-    storage.removeItem("userInfo")
+    state.info.login = false;
+    storage.removeItem("info")
   }
 }
 
 const actions = {
-  setUserLogin({ commit }: ActionContext<State, null>, login: User.userInfo): void {
+  setUserLogin({ commit }: ActionContext<State, null>, login: User.info): void {
     commit('SET_USER_LOGIN', login)
   },
   resetUserInfo({ commit }: ActionContext<State, null>): void {

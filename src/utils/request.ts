@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-31 16:06:50
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-10 10:35:03
+ * @LastEditTime: 2022-01-11 15:51:50
  */
 import axios from 'axios'
 import { ElMessage, ElLoading } from 'element-plus'
@@ -68,7 +68,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     loading.close()
-    return response.data || null
+    return !response.data.code && response.data ? response.data || null : prompt(response.data.msg);
   },
   error => {
     const msg = error && error.response ? HTTP_ERROR[error.response.status] || `连接错误${error.response.status}` : "连接到服务器失败";

@@ -5,10 +5,10 @@
  * @version: 1.0.0
  * @Date: 2021-12-27 11:43:14
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-07 14:06:49
+ * @LastEditTime: 2022-01-11 16:55:08
  */
 import 'swiper/swiper-bundle.min.css';
-import { defineComponent, computed } from 'vue'
+import { defineComponent, reactive } from 'vue'
 import { enumConfigAccount } from "@/config/enum";
 import gTableSwiper from "@/components/tableSwiper"
 
@@ -29,8 +29,9 @@ export default defineComponent({
   name: 'Spending',
   setup(props) {
 
-    const dataTable = computed(() => {
-      return props.data
+    const dataTable = reactive({
+      header: props.data[0].data.header,
+      data: props.data[0].data.data
     })
 
     return () => (
@@ -44,8 +45,8 @@ export default defineComponent({
             </div>
             <div class="table-wrapper">
               <dv-border-box-7>
-                <g-table-swiper data={dataTable.value.data}
-                  header={dataTable.value.header} />
+                <g-table-swiper data={dataTable.data}
+                  header={dataTable.header} />
               </dv-border-box-7>
             </div>
           </dv-border-box-9>

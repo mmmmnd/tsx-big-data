@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-04 10:16:44
+ * @LastEditTime: 2022-01-11 16:14:19
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigRevenue } from "@/config/enum";
@@ -13,22 +13,29 @@ import vRevenueChart from "../component/revenueChart"
 import gPie from "@/components/pie"
 import gDoubleDealer from "@/components/doubleDealer"
 
+// 定义类型
+const PropsType = {
+  data: {
+    type: Object,
+    default: {},
+    require: true
+  }
+} as const
+
 export default defineComponent({
+  props: PropsType,
   components: {
     vRevenueChart,
     gPie,
     gDoubleDealer
   },
   name: 'Revenue',
-  setup() {
+  setup(props) {
 
     const dataChart = reactive({
-      lines: ["收入", "支出"],
-      xNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
-      lists: [
-        [67, 97, 51, 38, 67, 97, 51, 38, 94, 23, 43, 18],
-        [94, 23, 43, 18, 97, 51, 38, 67, 67, 97, 51, 38]
-      ],
+      lines: props.data[0].data.lines,
+      xNames: props.data[0].data.xNames,
+      lists: props.data[0].data.lists,
     })
 
     const dataPie = reactive({
@@ -38,20 +45,11 @@ export default defineComponent({
       seriesRadius: ['30%', '50%'],
       legendTop: "5%",
       fontSize: 20,
-      number: [0],
-      lines: ["年收入", "年支出"],
-      data: [{
-        name: '年收入',
-        value: 789
-      }, {
-        name: '年支出',
-        value: 2789
-      }]
+      number: props.data[1].data.number,
+      lines: props.data[1].data.lines,
+      data: props.data[1].data.data
     })
 
-    setTimeout(() => {
-      dataPie.number = [999999999999999999]
-    }, 1000)
 
     return () => (
       <>

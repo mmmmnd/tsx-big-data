@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:25:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-06 16:51:44
+ * @LastEditTime: 2022-01-10 16:16:01
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -91,7 +91,7 @@ export default defineComponent({
       options = {
         grid: {
           left: '5%',
-          top: '10%',
+          top: '15%',
           bottom: '10%',
           right: '7%',
         },
@@ -105,7 +105,7 @@ export default defineComponent({
             fontSize: 14
           },
           left: "5%",
-          top: "-21%"
+          top: "-15%"
         },
         tooltip: {
           show: true,
@@ -168,7 +168,7 @@ export default defineComponent({
     )
 
     return () => {
-      const height = "250px", width = "650px";
+      const height = "320px", width = "650px";
       return <echart options={options} height={height} width={width} />
     }
   }

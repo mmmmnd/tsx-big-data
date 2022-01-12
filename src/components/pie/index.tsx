@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 09:44:43
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-31 15:34:08
+ * @LastEditTime: 2022-01-11 17:19:29
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -61,7 +61,7 @@ export default defineComponent({
   props: PropsType,
   setup(props) {
 
-    const colors = ['#0278e6', '#34d160', '#fcdf39', '#f19611', '#00c6ff', '#f76363'];
+    const colors = ['#0278e6', '#34d160', '#fcdf39', '#f19611', '#00c6ff', '#f76363', '#6e00c7'];
 
     let options = shallowReactive({ color: null, legend: null, tooltip: null, series: null })
 
