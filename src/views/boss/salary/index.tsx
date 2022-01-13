@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-28 09:20:53
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-12 09:22:49
+ * @LastEditTime: 2022-01-12 14:22:38
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigSalary, enumConfig } from "@/config/enum";
@@ -43,7 +43,7 @@ export default defineComponent({
             <h5 class="fs-md text-blue">
               {enumConfigSalary.TITLE_NAME}
               <span class="text-info">
-                （{enumConfig.PERSONNEL_STATUS}）
+                （2021年月平均工资，含在职、离职）
               </span>
             </h5>
           </div>

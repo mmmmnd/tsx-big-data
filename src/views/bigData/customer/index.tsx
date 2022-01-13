@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-11 16:43:20
+ * @LastEditTime: 2022-01-12 15:24:48
  */
 import 'swiper/swiper-bundle.min.css';
 import { defineComponent, reactive, ref } from 'vue'
@@ -86,7 +86,7 @@ export default defineComponent({
           <swiper spaceBetween={30}
             centeredSlides={true}
             thumbs={swiper_options.thumbs}
-            autoplay={swiper_options.autoplay}
+            // autoplay={swiper_options.autoplay}
             pagination={swiper_options.pagination}
             class="mySwiper"> {dataChart.map(item =>
               <swiper-slide>

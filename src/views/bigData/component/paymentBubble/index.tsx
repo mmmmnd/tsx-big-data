@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-21 09:33:05
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-30 18:20:32
+ * @LastEditTime: 2022-01-12 16:06:28
  */
 import { defineComponent, ref, reactive, watch, shallowReactive } from 'vue'
 
@@ -23,7 +23,7 @@ export default defineComponent({
 
     const config = reactive({
       rotation: 0,
-      symbolSizeData: [90, 150, 130, 80, 70, 130, 130, 130],
+      symbolSizeData: [90, 150, 130, 90, 90, 130, 130, 130],
       colors: ["#e25052", "#31b677", "#29b3e5", "#4ec1be", "#d47b36", "#d54de4", "#927b12", "#447cc5"],
       img: require("@/assets/img/bubble.png"),
       offsetData: [

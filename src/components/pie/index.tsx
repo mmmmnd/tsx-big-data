@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-20 09:44:43
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-11 17:19:29
+ * @LastEditTime: 2022-01-12 16:11:28
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -91,6 +91,7 @@ export default defineComponent({
           }
         },
         series: [{
+          name: "123123",
           radius: val.seriesRadius,
           center: ["50%", "50%"],
           type: 'pie',
@@ -104,7 +105,7 @@ export default defineComponent({
                 color: '#fff',
               },
               formatter: (params) => {
-                return params.name + '：' + params.value;
+                return params.name + ':' + params.value;
               }
             }
           },

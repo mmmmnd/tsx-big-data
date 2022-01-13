@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-16 15:02:59
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-11 18:19:22
+ * @LastEditTime: 2022-01-12 16:30:44
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -91,7 +91,7 @@ export default defineComponent({
           },
         },
         grid: {
-          left: '10%',
+          left: '9%',
           top: '20%',
           bottom: '10%',
           right: '3%',

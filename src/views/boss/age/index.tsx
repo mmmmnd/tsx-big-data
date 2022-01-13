@@ -55,11 +55,6 @@ export default defineComponent({
       data: props.data[1].data.data
     })
 
-    setTimeout(() => {
-      dataAgePie.number = [1167]
-      dataPie.number = [1167]
-    }, 1000)
-
     return () => (
       <>
         <dv-border-box-4 color={['#00c2ff', '#00c2ff']}
@@ -86,7 +81,7 @@ export default defineComponent({
               <g-pie height={dataAgePie.height}
                 width={dataAgePie.width}
                 data={dataAgePie.data}
-                lines={dataPie.lines}
+                lines={dataAgePie.lines}
                 legendTop={dataAgePie.legendTop}
                 seriesRadius={dataAgePie.seriesRadius}
                 seriesPosition={dataAgePie.seriesPosition} />

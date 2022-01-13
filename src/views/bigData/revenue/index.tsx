@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 16:33:09
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-11 16:14:19
+ * @LastEditTime: 2022-01-12 15:49:45
  */
 import { defineComponent, reactive } from 'vue';
 import { enumConfigRevenue } from "@/config/enum";
@@ -40,7 +40,7 @@ export default defineComponent({
 
     const dataPie = reactive({
       height: "300px",
-      width: "420px",
+      width: "490px",
       seriesPosition: "outside",
       seriesRadius: ['30%', '50%'],
       legendTop: "5%",

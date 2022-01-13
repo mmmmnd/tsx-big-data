@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-13 17:38:16
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-12 09:18:19
+ * @LastEditTime: 2022-01-12 16:12:01
  */
 export enum enumConfigCustomer {
   TITLE_NAME = "客户信息",
@@ -13,7 +13,7 @@ export enum enumConfigCustomer {
 
 export enum enumConfigRevenue {
   TITLE_NAME = "月度营收统计",
-  ANNUAL_PROFIT_NAME = "年利润"
+  ANNUAL_PROFIT_NAME = "年利润（万）"
 }
 
 export enum enumConfigSpending {
@@ -87,5 +87,5 @@ export enum enumConfigLogin {
 }
 
 export enum enumConfig {
-  PERSONNEL_STATUS = "在职离职",
+  PERSONNEL_STATUS = "含在职、离职",
 }

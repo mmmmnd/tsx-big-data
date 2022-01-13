@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 10:25:08
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-10 16:16:01
+ * @LastEditTime: 2022-01-12 16:07:36
  */
 import { defineComponent, watch, shallowReactive } from 'vue'
 
@@ -90,7 +90,7 @@ export default defineComponent({
     watch(() => props, (val: any) => {
       options = {
         grid: {
-          left: '5%',
+          left: '8%',
           top: '15%',
           bottom: '10%',
           right: '7%',
