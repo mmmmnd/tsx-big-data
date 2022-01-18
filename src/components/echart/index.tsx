@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-06 17:41:28
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-07 16:28:42
+ * @LastEditTime: 2021-12-31 10:32:22
  */
 import { defineComponent, onMounted, ref, watch, onBeforeUnmount } from 'vue'
 import '@/assets/echart/map/fujian.js'
@@ -46,14 +46,28 @@ export default defineComponent({
     const chart = ref<any>()
 
     /**
+     * 修复echart 在vue3不显示tooltip
+     * @param obj 
+     */
+    const unwarp = (obj) => obj && (obj.__v_raw || obj.valueOf() || obj);
+
+    /**
      * 初始化echart
      * @param data 数据项
      * @param clearCaching 是否清除缓存
      */
     const initChart = (data?: any, clearCaching = false) => {
       if (data || props.options) {
-        chart.value.setOption(data || props.options, clearCaching)
+        unwarp(chart.value).setOption(data || props.options, clearCaching)
       }
+    }
+
+    /**
+     * 设置DispatchAction
+     * @param obj 配置
+     */
+    const setDispatchAction = (obj) => {
+      chart.value.dispatchAction(obj);
     }
 
     // 生命周期
@@ -79,7 +93,8 @@ export default defineComponent({
     // 对外暴露接口
     expose({
       chartRef,
-      initChart
+      initChart,
+      setDispatchAction
     });
 
     return () => {

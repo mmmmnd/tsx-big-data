@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 09:33:39
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-09 15:18:37
+ * @LastEditTime: 2022-01-06 09:41:03
  */
 const path = require('path')
 const name = 'tsx-big-data';
@@ -127,7 +127,7 @@ module.exports = {
   // 所有 webpack-dev-server 的选项都支持
   // webpack-dev-server 文档 https://webpack.js.org/configuration/dev-server/
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8080,
     disableHostCheck: true,
     // proxy: {
@@ -142,7 +142,5 @@ module.exports = {
     // },
     // 为每个静态文件开启gzip
     compress: true,
-    // 启动后打开浏览器
-    open: true
   }
 }

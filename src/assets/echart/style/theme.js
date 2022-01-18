@@ -75,12 +75,6 @@ const theme = {
         color: '#408829'
       }
     },
-    splitArea: {
-      show: true,
-      areaStyle: {
-        color: ['rgba(250,250,250,0.1)', 'rgba(200,200,200,0.1)']
-      }
-    },
     splitLine: {           // 分隔线
       lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
         color: ['#eee']

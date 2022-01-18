@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-07 09:14:26
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-13 10:54:15
+ * @LastEditTime: 2022-01-05 09:48:04
  */
 import "@/assets/scss/index.scss";
 import {
@@ -78,6 +78,7 @@ export default defineComponent({
         timeInfo.dateWeek = WEEK[date.getDay()];
       }, 1000);
     };
+
 
     return () => (
       <>

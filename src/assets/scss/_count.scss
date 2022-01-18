@@ -1,0 +1,19 @@
+.count-wrapper{
+  position: relative;
+  .count-main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    .dv-dig-flop{
+      height: 30px;
+      width: 200px;
+    }
+  }
+  .count-text{
+    position: relative;
+    top: -20px;
+  }
+}

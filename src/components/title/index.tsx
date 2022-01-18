@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2021-12-09 11:33:26
  * @LastEditors: 莫卓才
- * @LastEditTime: 2021-12-09 16:22:20
+ * @LastEditTime: 2022-01-11 17:40:15
  */
 import { defineComponent } from "vue";
 
@@ -61,7 +61,7 @@ export default defineComponent({
           </div>
           <div class="d-felx jc-end nav">
             <dv-decoration-10 class="dv-dec-10-s mt-4" />
-            <router-link to={props.color === "#f9c801" ? "boss" : "bigData"} class="d-flex flex-column ai-end">
+            <router-link to={props.color === "#f9c801" ? "boss" : "bigData"} class="on-route">
               <div class="d-flex flex-column ai-center mt-4">
                 <svg-icon name="switch"
                   size={50}
