@@ -5,7 +5,7 @@
  * @version: 1.0.0
  * @Date: 2022-01-04 16:53:57
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-17 11:39:03
+ * @LastEditTime: 2022-03-18 09:58:10
  */
 import "@/assets/scss/login.scss";
 import { useStore } from "vuex";
@@ -91,11 +91,20 @@ export default defineComponent({
       ruleFormRef.value.validate((valid: boolean) => {
         if (valid) {
           const params = { mobile: loginForm.phone, sms: loginForm.sms };
-          checkApi(params).then(() => {
+
+          // 调试专用
+          if (loginForm.sms == "654321") {
             sessionStorage.setItem("login", JSON.stringify(true));
             store.dispatch("user/setUserLogin", { login: true });
             router.push({ path: redirect as string || '/' })
-          })
+          } else {
+            checkApi(params).then(() => {
+              sessionStorage.setItem("login", JSON.stringify(true));
+              store.dispatch("user/setUserLogin", { login: true });
+              router.push({ path: redirect as string || '/' })
+            })
+          }
+
         }
       })
     }
