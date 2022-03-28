@@ -4,7 +4,7 @@
  * @Email: 1240235512@qq.com
  * @Date: 2020-12-28 16:25:18
  * @LastEditors: 莫卓才
- * @LastEditTime: 2022-01-11 17:44:23
+ * @LastEditTime: 2022-03-28 09:27:12
  */
 import { ResponseData } from 'axios'
 import HTTP from '@/utils/request'
@@ -27,7 +27,7 @@ export function bigDataApi(): Promise<ResponseData<any>> {
 
 export function smsApi(params: User.phone): Promise<ResponseData<Config.sms>> {
   return HTTP({
-    url: 'bigdata/bigdata/sms',
+    url: 'bigdata/bigdata/big_sms',
     method: 'post',
     data: params
   })
