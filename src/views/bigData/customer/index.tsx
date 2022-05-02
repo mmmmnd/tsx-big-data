@@ -86,7 +86,7 @@ export default defineComponent({
           <swiper spaceBetween={30}
             centeredSlides={true}
             thumbs={swiper_options.thumbs}
-            // autoplay={swiper_options.autoplay}
+            autoplay={swiper_options.autoplay}
             pagination={swiper_options.pagination}
             class="mySwiper"> {dataChart.map(item =>
               <swiper-slide>
