@@ -22,7 +22,7 @@ export default function () {
     if (appRef.value) {
       if (currentRate > baseProportion) {
         // 表示更宽
-        scale.width = ((window.innerHeight * baseProportion) / baseWidth).toFixed(5)
+        scale.width = ((window.innerHeight * currentRate) / baseWidth).toFixed(5)
         scale.height = (window.innerHeight / baseHeight).toFixed(5)
         appRef.value.style.transform = `scale(${scale.width}, ${scale.height}) translate(-50%, -50%)`
       } else {

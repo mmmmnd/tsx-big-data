@@ -31,7 +31,7 @@ export default defineComponent({
 
     const dataChart = reactive({
       height: "600px",
-      width: "1820px",
+      width: "1840px",
       data: props.data[0].data.data,
       xName: props.data[0].data.xName
     })

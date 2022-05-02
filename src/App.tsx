@@ -15,9 +15,7 @@ export default defineComponent({
   name: 'App',
   setup() {
     return () => (
-      <div class="app">
-        <RouterView />
-      </div>
+      <RouterView />
     );
   }
 });
