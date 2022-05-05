@@ -7,6 +7,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transform-origin: left top;
+
   .bg {
     width: 100%;
     height: 100%;
@@ -15,39 +16,49 @@
     background-size: cover;
     background-position: center center;
     overflow-y: auto;
+    overflow-x: hidden;
   }
+
   .host-body {
-    .title{
+    .title {
       width: 520px;
     }
-    .nav{
+
+    .nav {
       width: 480px;
+
       .dv-dec-10,
       .dv-dec-10-s {
         width: 100%;
         height: 5px;
       }
+
       .dv-dec-10-s {
         transform: rotateY(180deg);
       }
-      .on-route{
+
+      .on-route {
         display: inline;
         float: right;
-        .router{
+
+        .router {
           border-radius: 5px;
         }
       }
-      
+
     }
+
     .dv-dec-8 {
       width: 200px;
       height: 50px;
     }
+
     .title {
-      .dv-dec-5{
+      .dv-dec-5 {
         width: 480px;
-        height:40px;
+        height: 40px;
       }
+
       .dv-dec-6 {
         position: absolute;
         bottom: -30px;

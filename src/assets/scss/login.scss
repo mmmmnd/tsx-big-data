@@ -10,6 +10,7 @@ $cursor: #fff;
     display: inline-block;
     height: 47px;
     width: 85%;
+
     input {
       background: transparent;
       border: 0px;
@@ -32,14 +33,16 @@ $cursor: #fff;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     color: #454545;
-    .getSms{
+
+    .getSms {
       width: 33%;
       height: 53px;
     }
   }
-  .postForm{
-    width:100%;
-    margin-bottom:30px;
+
+  .postForm {
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
 
@@ -50,6 +53,7 @@ $cursor: #fff;
   background-image: url('../../assets/img/login.jpg');
   background-size: cover;
   background-position: center center;
+
   .login-form {
     position: relative;
     width: 520px;
@@ -58,16 +62,19 @@ $cursor: #fff;
     margin: 0 auto;
     overflow: hidden;
   }
+
   .tips {
     font-size: 14px;
     color: #fff;
     margin-bottom: 10px;
+
     span {
       &:first-of-type {
         margin-right: 16px;
       }
     }
   }
+
   .svg-container {
     padding: 6px 5px 6px 15px;
     color: $dark_gray;
@@ -75,8 +82,10 @@ $cursor: #fff;
     width: 30px;
     display: inline-block;
   }
+
   .title-container {
     position: relative;
+
     .title {
       font-size: 26px;
       color: $light_gray;
@@ -85,6 +94,7 @@ $cursor: #fff;
       font-weight: bold;
     }
   }
+
   .show-pwd {
     position: absolute;
     right: 10px;

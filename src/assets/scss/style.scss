@@ -44,7 +44,7 @@ a {
 
 // 图标
 .iconfont {
-  font-size: 20px!important;
+  font-size: 20px !important;
   color: #5cd9e8;
 }
 
@@ -119,7 +119,8 @@ a {
 }
 
 //颜色
-@each $colorkey, $color in $colors {
+@each $colorkey,
+$color in $colors {
   .text-#{$colorkey} {
     color: $color;
   }
@@ -137,38 +138,45 @@ a {
 }
 
 //flex
-@each $key, $value in $flex-jc {
+@each $key,
+$value in $flex-jc {
   .jc-#{$key} {
     justify-content: $value;
   }
 }
 
-@each $key, $value in $flex-ai {
+@each $key,
+$value in $flex-ai {
   .ai-#{$key} {
     align-items: $value;
   }
 }
 
 //字体
-@each $fontkey, $fontvalue in $font-sizes {
+@each $fontkey,
+$fontvalue in $font-sizes {
   .fs-#{$fontkey} {
-    font-size:  calc($base-font-size / $fontvalue);
+    font-size: calc($base-font-size / $fontvalue);
   }
 }
 
 //.mt-1 => margin top
 //spacing
 
-@each $typekey, $type in $spacing-types {
+@each $typekey,
+$type in $spacing-types {
+
   //.m-1
-  @each $sizekey, $size in $spacing-sizes {
+  @each $sizekey,
+  $size in $spacing-sizes {
     .#{$typekey}-#{$sizekey} {
       #{$type}: $size * $spacing-base-size;
     }
   }
 
   //.mx-1
-  @each $sizekey, $size in $spacing-sizes {
+  @each $sizekey,
+  $size in $spacing-sizes {
     .#{$typekey}x-#{$sizekey} {
       #{$type}-left: $size * $spacing-base-size;
       #{$type}-right: $size * $spacing-base-size;
@@ -181,8 +189,11 @@ a {
   }
 
   //.mt-1
-  @each $directionkey, $direction in $spacing-directions {
-    @each $sizekey, $size in $spacing-sizes {
+  @each $directionkey,
+  $direction in $spacing-directions {
+
+    @each $sizekey,
+    $size in $spacing-sizes {
       .#{$typekey}#{$directionkey}-#{$sizekey} {
         #{$type}-#{$direction}: $size * $spacing-base-size;
       }
